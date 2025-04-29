@@ -1,24 +1,24 @@
 body { font-family: 'Pretendard', sans-serif; }
 .container { width: 100%; height: 100%;}
-.wrap { position: relative; max-width: 540px; height: 100%; margin: 0 auto; background: #FFFBF7; color: #222;}
-/* section { margin: 200px 0; }
-section:first-child { margin-top: 0; }
-section:last-child { margin-bottom: 0; } */
+.wrap { position: relative; max-width: 540px; height: 100%; margin: 0 auto; /*background: #FFFBF7;*/ color: #222;}
 img { width: 100%; display: block; }
 
 /* main */
-.main { position: fixed; width: 540px; }
+/* .main { position: fixed; width: 540px; }
 .main-background { width: 100%; padding-top: 122%; position: absolute; background: url('/img/wedding.jpg')no-repeat center; background-size: cover; }
+.main-title { position: absolute; } */
 
 /* content */
-.content-wrap { position: absolute; width: 100%; margin-top: 115%; background: #FFFBF7; padding: 20px; border-radius: 25px; }
+/* .content-wrap { position: absolute; width: 100%; margin-top: 115%; background: #FFFBF7; padding: 20px; border-radius: 25px 25px 0 0; }
 .content-section { margin: 100px 0; }
+.content-section__title { font-family: 'PSYCHEROS'; font-size: 36px; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
 
 .content-intro { text-align: center; }
 .content-intro p + p { margin-top: 30px; }
-
-.content-date p { text-align: center; margin-top: 60px; font-size: 24px; }
-.air-datepicker { width: 350px; margin: 0 auto; background: #FFFBF7; border-radius: 0; font-family: 'Pretendard', sans-serif; }
+*/
+.content-date p { text-align: center; margin-top: 60px; font-size: 20px; }
+.calendar { margin-bottom: 60px; }
+.air-datepicker { width: 350px; margin: 0 auto; border-radius: 0; font-family: 'Pretendard', sans-serif; }
 .air-datepicker-nav { padding: 17px 76px 21px; position: relative; border-bottom: none; justify-content: center; }
 .air-datepicker-nav--title { padding: 4px; text-align: center; font-size: 16px; line-height: 1.75; font-weight: 600; color: #222; border-radius: 0; transition: background .3s; }
 .air-datepicker-nav--title.-disabled- { color: #B3B2B2; transition: none; }
@@ -44,17 +44,24 @@ img { width: 100%; display: block; }
 .air-datepicker-button span { font-size: 16px; line-height: 1.6; font-weight: 600; }
 .air-datepicker-buttons { gap: 10px; }
 .air-datepicker--buttons { padding: 10px; border-top: 1px solid rgba(255, 255, 255, 0.5); }
-
+/*
 .content-place p { text-align: center; margin-bottom: 30px; }
-.map { height: 300px; width: 90%; margin: 0 auto; }
+.content-place__map { height: 300px; width: 90%; margin: 0 auto; }
+.content-place__desc { text-align: center; }
+.content-place__desc li:not(:last-child) { margin-top: 30px; }
+.content-place__desc p { margin-top: 10px; }
 
-.gallery { background: #222; }
+.content-gallery { margin-left: -20px; margin-right: -20px; }
+.content-gallery .swiper { padding-left: 20px; }
+.content-gallery .swiper-slide { width: 300px; margin-right: 15px; }
+.content-gallery .swiper-slide:last-child { margin-right: 20px; }
+
 .gallery-item { width: 80%; margin: 0 auto; }
 .gallery-item:not(:first-child) { margin-top: -80px; }
 .gallery-item img { width: 100%; }
 
 
-.account p { text-align: center; line-height: 1.8; }
+.content-account p { text-align: center; line-height: 1.8; }
 
 .jt-accordion { display: flex; flex-wrap: wrap; row-gap: 12px; }
 .jt-accordion__item { width: 100%; background: var(--color-gray-100); border-radius: 8px; }
@@ -64,20 +71,73 @@ img { width: 100%; display: block; }
 .jt-accordion__control .jt-icon { display: block; width: 100%; }
 .jt-accordion__control .jt-icon path { fill: var(--color-gray-500); }
 
+.jt-accordion__title { text-align: center; }
 .jt-accordion__content { margin-top: -16px; margin-bottom: 16px; position: relative; overflow: hidden; }
-.jt-accordion__content-inner { padding: 0 36px 28px; margin-bottom: -16px; }
+.jt-accordion__content-inner { padding: 0 36px 28px; margin-bottom: -16px; } */
 
-.jt-accordion .jt-accordion__item:not(:first-child) .jt-accordion__content .jt-accordion__content-inner { display: none; }
+/* .jt-accordion .jt-accordion__item:not(:first-child) .jt-accordion__content .jt-accordion__content-inner { display: none; } */
 
 /* ACTIVE */
-.jt-accordion__item.jt-accordion__control .jt-icon path { fill: var(--wp--preset--color--black); }
+/* .jt-accordion__item.jt-accordion__control .jt-icon path { fill: var(--wp--preset--color--black); }
 .jt-accordion__item.jt-accordion--active .jt-accordion__control { rotate: -180deg; }
 
 .footer { height: 200vh; }
 
+.test { height: 100vh; }
+.guest { background: #8d9366; height: 100vh; width: 100%; }
 
+
+ */
+
+
+
+.layer-01 { position: relative; z-index: 1; }
+.layer-01.fixed { margin-bottom: 100vh; }
+.main-visual { position: relative; overflow: hidden; }
+.main-visual__bg { width: 100%; height: 100vh; background: url('/img/wedding4.jpg')no-repeat center; background-size: cover; }
+.main-visual__title { position: absolute; top: 50%; left: 50%; translate: -50% -50%; font-family: 'OTNeglige'; color: #8d9366; font-size: 110px; white-space: nowrap; z-index: 100; }
+.main-visual__img { width: 300px; height: 400px; position: absolute; top: 55vh; left: 50%; translate: -50% 0; background: url('/img/wedding3.jpg')no-repeat center; background-size: cover; z-index: 2; }
+
+.section-intro { position: relative; background: #000; color: #8d9366; text-align: center; z-index: 1; }
+.section-intro p { font-size: 18px; line-height: 2; }
+.section-intro::before { position: absolute; content: ''; width: 100%; height: 200px; top: -200px; left: 0; background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1)); }
+.section-intro__first { padding: 200px 0; }
+.section-intro__second { display: flex; height: 100vh; }
+.section-intro__second > div { width: 50%; }
+.section-intro__img { position: relative; }
+.section-intro__img-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.section-intro__img-item img { height: 100%; width: 100%; object-fit: cover; }
+.section-intro__txt { position: relative; }
+.section-intro__txt p { position: absolute; top: 50%; left: 50%; translate: -50% -50%; width: 100%; }
+.section-intro__img-item,
+.section-intro__txt-item { opacity: 0; }
+.section-intro__img-item:first-child,
+.section-intro__txt-item:first-child { opacity: 1; }
+.section-intro__three { padding: 200px 0; position: relative; }
+.section-intro__three-txt:not(:last-child) { margin-bottom: 60px; }
+
+.layer-02 { position: relative; top: 0; width: 540px; overflow: hidden; }
+.layer-02.fixed { position: fixed; top: 50vh; }
+.section-date { height: 50vh; overflow: hidden; position: relative; }
+.section-date__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../img/wedding5.jpg)no-repeat top; filter: blur(10px); scale: 1.1; }
+.section-date p { position: absolute; top: 50%; left: 50%; translate: -50% -50%; width: 100%; text-align: center; color: #fff; font-size: 24px; line-height: 1.5; }
+.section-location__map { height: 65vh; margin-left: 30px; }
+.section-location__desc { text-align: end; padding-right: 30px; padding-top: 30px; padding-bottom: 100px; }
+.section-location__desc span { color: #8d9366; }
+.section-location__desc p { margin-top: 10px; }
+.section-location__desc li:not(:last-child) { margin-bottom: 30px; }
+
+.section-marquee { height: 445px; overflow: hidden; position: relative; }
+.section-marquee__item { white-space: nowrap; font-family: 'OTNeglige'; font-size: 200px; text-transform: uppercase; will-change: transform; }  
+.section-marquee__left { position: absolute; top: 0; left: -300px; }  
+.section-marquee__right { position: absolute; bottom: 0; }
+
+.section-gallery { }
+.section-gallery .box { width: 400px; height: 400px; background: #fff; margin: 60px auto; overflow: hidden;  }
 
 
 @media (max-width: 540px) {
-    .main { width: 100%; }
+    .main-visual__title { font-size: 86px; }
+    .layer-02 { width: 100%; }
+    .section-gallery .box { width: 80%; }
 }
