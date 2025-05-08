@@ -7,12 +7,11 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
-    
-        function sendTemplate() {
-          Kakao.Link.sendCustom({
-            templateId: 120426,
-          });
-        }
+        document.querySelector('.share-btn').addEventListener('click',() => {
+            Kakao.Link.sendCustom({
+                templateId: 120426,
+            });
+        })
       </script>
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -20,8 +19,8 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <button onclick="sendTemplate()">📩 카카오톡으로 청첩장 보내기</button>
     
+
     <div class="container">
         <div class="wrap">
             <div class="layer-01">
@@ -34,16 +33,19 @@
                 
                 <div class="section-intro">
                     <div class="section-intro__first">
-                        <p class="appear-motion">여름의 햇살이 따스했던 날</p>
-                        <p class="appear-motion">우리는 처음 만났습니다.</p>
+                        <div class="section-intro__first__item">
+                            <p class="appear-motion">여름의 햇살이 따스했던 날</p>
+                            <p class="appear-motion">우리는 처음 만났습니다.</p>
+                        </div>
+                        
+                        <div class="section-intro__first__item">
+                            <p class="appear-motion">푸른 나무 사이로</p>
+                            <p class="appear-motion">불어오는 바람처럼</p>
+                        </div>
                     </div>
     
                     <div class="section-intro__second">
                         <div class="section-intro__img">
-                            <div class="section-intro__img-item">
-                                <img src="./img/nature-02.jpg" alt="">
-                            </div>
-    
                             <div class="section-intro__img-item">
                                 <img src="./img/wedding-photo-13.jpeg" alt="">
                             </div>
@@ -54,10 +56,6 @@
                         </div>
     
                         <div class="section-intro__txt">
-                            <div class="section-intro__txt-item">
-                                <p>푸른 나무 사이로 <br />불어오는 바람처럼</p>
-                            </div>
-    
                             <div class="section-intro__txt-item">
                                 <p>서로에게 <br />다정한 위로가 되고</p>
                             </div>
@@ -177,16 +175,16 @@
                         
                         <div class="section-account__profile-desc">
                             <div class="section-account__profile-desc-item appear-motion">
-                                <span>신랑 123-4567-8910</span>
-                                <a>복사</a>
+                                <span class="copy-text">신랑 123-4567-8910</span>
+                                <a class="copy-btn">복사하기</a>
                             </div>
                             <div class="section-account__profile-desc-item appear-motion">
-                                <span>신랑 아버지 123-4567-8910</span>
-                                <a>복사</a>
+                                <span class="copy-text">신랑 아버지 123-4567-8910</span>
+                                <a class="copy-btn">복사하기</a>
                             </div>
                             <div class="section-account__profile-desc-item appear-motion">
-                                <span>신랑 어머니 123-4567-8910</span>
-                                <a>복사</a>
+                                <span class="copy-text">신랑 어머니 123-4567-8910</span>
+                                <a class="copy-btn">복사하기</a>
                             </div>
                         </div>
                     </div>
@@ -200,16 +198,20 @@
                         
                         <div class="section-account__profile-desc">
                             <div class="section-account__profile-desc-item appear-motion">
-                                <span>신부 123-4567-8910</span>
-                                <a>복사</a>
+                                <span class="copy-text">신부 123-4567-8910</span>
+                                <a class="copy-btn">복사하기</a>
                             </div>
                             <div class="section-account__profile-desc-item appear-motion">
-                                <span>신부 아버지 123-4567-8910</span>
-                                <a>복사</a>
+                                <span class="copy-text">신부 아버지 123-4567-8910</span>
+                                <a class="copy-btn">복사하기</a>
                             </div>
                             <div class="section-account__profile-desc-item appear-motion">
-                                <span>신부 어머니 123-4567-8910</span>
-                                <a>복사</a>
+                                <div>
+                                    <span>신부 어머니 서미정</span>
+                                    <span class="copy-text">국민 123-4567-8910</span>
+                                </div>
+                                
+                                <a class="copy-btn">복사하기</a>
                             </div>
                         </div>
                     </div>
@@ -219,7 +221,14 @@
         </div>
     </div>
 
-    <button id="kakao-link-btn">카카오톡으로 공유</button>
+    <div class="nav">
+        <div class="nav-item scroll-top">
+            <span>TOP</span>
+        </div>
+        <div class="nav-item share-btn">
+            <span>공유</span>
+        </div>
+    </div>
     <script src="./js/greensock/gsap.min.js"></script>
 	<script src="./js/greensock/ScrollTrigger.min.js"></script>
 	<script src="./js/greensock/DrawSVGPlugin.min.js"></script>

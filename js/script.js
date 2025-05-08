@@ -15,6 +15,7 @@ marqee();
 gallery();
 calendar();
 profile();
+copyToClipboard();
 
 
 /* **************************************** *
@@ -90,10 +91,11 @@ function pin_motion(){
     ScrollTrigger.create({
         trigger: '.section-intro__second',
         start: 'top top',
-        //end: `+=${totalSteps * 100}%`, // 각 아이템 당 100% 스크롤
+        end: `+=${totalSteps * 100}%`, // 각 아이템 당 100% 스크롤
         pin: true,
         scrub: true,
         anticipatePin: 1,
+        //markers:1,
     });
 
     // 이미지 전환 타임라인
@@ -101,17 +103,17 @@ function pin_motion(){
     scrollTrigger: {
         trigger: '.section-intro__second',
         start: 'top top',
-        //end: `+=${totalSteps * 100}%`,
+        end: `+=${totalSteps * 100}%`,
         scrub: true,
     }
     });
 
     imgItems.forEach((item, index) => {
-    if (index === 0) return; // 첫 번째는 기본 노출
+    //if (index === 0) return; // 첫 번째는 기본 노출
 
     imgTl
-        .to(imgItems[index - 1], { opacity: 0, duration: 0.5 }, index)
-        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 0.5 }, index);
+        .to(imgItems[index - 1], { opacity: 0, duration: 1 }, index)
+        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
     });
 
     // 텍스트 전환 타임라인
@@ -119,17 +121,17 @@ function pin_motion(){
     scrollTrigger: {
         trigger: '.section-intro__second',
         start: 'top top',
-        //end: `+=${totalSteps * 100}%`,
+        end: `+=${totalSteps * 100}%`,
         scrub: true,
     }
     });
 
     txtItems.forEach((item, index) => {
-    if (index === 0) return;
+    //if (index === 0) return;
 
     txtTl
-        .to(txtItems[index - 1], { opacity: 0, duration: 0.5 }, index)
-        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 0.5 }, index);
+        .to(txtItems[index - 1], { opacity: 0, duration: 1 }, index)
+        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
     });
 
 
@@ -230,6 +232,7 @@ function split_text(){
         trigger: '.last-txt',
         start: 'top 40%',
         //markers: 1,
+        scrub: true,
         onEnter: function(){
             let split = SplitText.create(".split", { type: "words", aria: "hidden" });
     
@@ -237,7 +240,7 @@ function split_text(){
             opacity: 0,
             duration: 2,
             ease: "sine.out",
-            stagger: 0.2,
+            stagger: 0.15,
         });
         },
     });
@@ -408,7 +411,25 @@ function profile(){
     })
     
 }
-        
+     
+
+
+function copyToClipboard() {
+    document.querySelectorAll('.copy-btn').forEach(button => {
+        button.addEventListener('click', function () {
+          const container = this.closest('.section-account__profile-desc-item');
+          const span = container.querySelector('span');
+          const textToCopy = span.textContent;
+    
+          navigator.clipboard.writeText(textToCopy)
+        });
+      });
+    
+    
+}
+
+
+
 })();    
 
 
