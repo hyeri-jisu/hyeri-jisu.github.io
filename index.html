@@ -93,9 +93,9 @@
                 <div class="section-date">
                     
                     <p class="section-date__desc main split">2025.07.20 (일) 오후 1시 30분<br />
-                        부산연금공단 W웨딩 1층 컨벤션홀</p>
+                        W웨딩 국민연금공단 1층 컨벤션홀</p>
                         <p class="section-date__desc blur">2025.07.20 (일) 오후 1시 30분<br />
-                            부산연금공단 W웨딩 1층 컨벤션홀</p>
+                            W웨딩 국민연금공단 1층 컨벤션홀</p>
                 </div>
                 
                 <div class="section-location">
@@ -226,36 +226,37 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
     Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
-    //document.getElementById('kakao-link-btn').addEventListener('click', function () {
-    Kakao.Link.sendDefault({
-      objectType: 'feed',
-      content: {
-        title: '혜리❤️지수 결혼합니다.',
-        description: '25년 7월 20일 일요일 오후 1시 30분',
-        imageUrl: './img/wedding-photo-13.jpeg', // 세로 이미지
-        link: {
-          mobileWebUrl: 'https://hyeri-jisu.github.io/',
-          webUrl: 'https://hyeri-jisu.github.io/'
-        }
+    
+    Kakao.Share.sendDefault({
+  objectType: 'location',
+  address: '경기 성남시 분당구 판교역로 166 3층',
+  addressTitle: '카카오 판교오피스 카페톡',
+  content: {
+    title: '신메뉴 출시♥︎ 체리블라썸라떼',
+    description: '이번 주는 체리블라썸라떼 1+1',
+    imageUrl:
+      'http://k.kakaocdn.net/dn/bSbH9w/btqgegaEDfW/vD9KKV0hEintg6bZT4v4WK/kakaolink40_original.png',
+    link: {
+      mobileWebUrl: 'https://developers.kakao.com',
+      webUrl: 'https://developers.kakao.com',
+    },
+  },
+  social: {
+    likeCount: 286,
+    commentCount: 45,
+    sharedCount: 845,
+  },
+  buttons: [
+    {
+      title: '웹으로 보기',
+      link: {
+        mobileWebUrl: 'https://developers.kakao.com',
+        webUrl: 'https://developers.kakao.com',
       },
-      buttons: [
-        {
-          title: '청첩장 보기',
-          link: {
-            mobileWebUrl: 'https://hyeri-jisu.github.io/',
-            webUrl: 'https://hyeri-jisu.github.io/'
-          }
-        },
-        {
-          title: '위치 보기',
-          link: {
-            mobileWebUrl: 'https://place.map.kakao.com/27296187', 
-            webUrl: 'https://place.map.kakao.com/27296187'
-          }
-        }
-      ]
-    });
-  //});
+    },
+  ],
+});
+
     </script>
 
 </body>
