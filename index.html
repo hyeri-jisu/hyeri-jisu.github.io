@@ -13,10 +13,7 @@
     <meta property="og:url" content="https://hyeri-jisu.github.io/" />
     <meta property="og:title" content="혜리❤️지수 결혼합니다" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="./img/wedding-photo-13.jpeg"
-    />
+    <meta property="og:image" content="./img/wedding-photo-13.jpeg" />
     <meta property="og:description" content="25년 7월 20일 일요일 오후 1시 30분" />
 </head>
 <body>
@@ -226,5 +223,40 @@
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=8wotlvp4tu"></script>
 	<script src="./js/script.js"></script>
 	<script src="./js/naver-map.js"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+    Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
+    //document.getElementById('kakao-link-btn').addEventListener('click', function () {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '혜리❤️지수 결혼합니다.',
+        description: '25년 7월 20일 일요일 오후 1시 30분',
+        imageUrl: './img/wedding-photo-13.jpeg', // 세로 이미지
+        link: {
+          mobileWebUrl: 'https://hyeri-jisu.github.io/',
+          webUrl: 'https://hyeri-jisu.github.io/'
+        }
+      },
+      buttons: [
+        {
+          title: '청첩장 보기',
+          link: {
+            mobileWebUrl: 'https://hyeri-jisu.github.io/',
+            webUrl: 'https://hyeri-jisu.github.io/'
+          }
+        },
+        {
+          title: '위치 보기',
+          link: {
+            mobileWebUrl: 'https://place.map.kakao.com/27296187', 
+            webUrl: 'https://place.map.kakao.com/27296187'
+          }
+        }
+      ]
+    });
+  //});
+    </script>
+
 </body>
 </html>
