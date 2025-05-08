@@ -1,21 +1,34 @@
-body { font-family: 'Pretendard', sans-serif; }
+:root {
+    /* COLOR */
+    --color-white: #FFF;
+    --color-black: #000;
+    --color-primary: #8d9366;
+    --color-secondry: #D1D5D7;
+    --color-third: #FEDF6A;
+	--color-brand: #7b1f2e;
+
+    /* FONT */
+    --font-primary: 'OTNeglige', sans-serif;
+    --font-secondary: 'Pretendard', sans-serif;
+
+    --letter-spacing: 0em;
+
+    --font-size-01: 74rem;
+    --font-size-02: 56rem;
+    --font-size-03: 44rem;
+    --font-size-04: 32rem;
+    --font-size-05: 24rem;
+}
+
+
+body { font-family: var(--font-secondary); }
 .container { width: 100%; height: 100%;}
 .wrap { position: relative; max-width: 540px; height: 100%; margin: 0 auto; /*background: #FFFBF7;*/ color: #222;}
 img { width: 100%; display: block; }
+.appear-motion { font-size: 18px; line-height: 2; }
 
-/* main */
-/* .main { position: fixed; width: 540px; }
-.main-background { width: 100%; padding-top: 122%; position: absolute; background: url('/img/wedding.jpg')no-repeat center; background-size: cover; }
-.main-title { position: absolute; } */
 
-/* content */
-/* .content-wrap { position: absolute; width: 100%; margin-top: 115%; background: #FFFBF7; padding: 20px; border-radius: 25px 25px 0 0; }
-.content-section { margin: 100px 0; }
-.content-section__title { font-family: 'PSYCHEROS'; font-size: 36px; text-align: center; margin-bottom: 20px; text-transform: uppercase; }
 
-.content-intro { text-align: center; }
-.content-intro p + p { margin-top: 30px; }
-*/
 .content-date p { text-align: center; margin-top: 60px; font-size: 20px; }
 .calendar { margin-bottom: 60px; }
 .air-datepicker { width: 350px; margin: 0 auto; border-radius: 0; font-family: 'Pretendard', sans-serif; }
@@ -94,9 +107,9 @@ img { width: 100%; display: block; }
 .layer-01 { position: relative; z-index: 1; }
 .layer-01.fixed { margin-bottom: 100vh; }
 .main-visual { position: relative; overflow: hidden; }
-.main-visual__bg { width: 100%; height: 100vh; background: url('/img/wedding4.jpg')no-repeat center; background-size: cover; }
-.main-visual__title { position: absolute; top: 50%; left: 50%; translate: -50% -50%; font-family: 'OTNeglige'; color: #8d9366; font-size: 110px; white-space: nowrap; z-index: 100; }
-.main-visual__img { width: 300px; height: 400px; position: absolute; top: 55vh; left: 50%; translate: -50% 0; background: url('/img/wedding3.jpg')no-repeat center; background-size: cover; z-index: 2; }
+.main-visual__bg { width: 100%; height: 100vh; background: url('/img/wedding-photo-06.jpeg')no-repeat center; background-size: cover; }
+.main-visual__title { position: absolute; top: 50%; left: 50%; translate: -50% -50%; font-family: var(--font-primary); color: #8d9366; font-size: 110px; white-space: nowrap; z-index: 100; }
+.main-visual__img { width: 80%; padding-top: 110%; position: absolute; top: 56vh; left: 50%; translate: -50% 0; background: url('/img/wedding-photo-16.jpeg')no-repeat center; background-size: cover; z-index: 2; }
 
 .section-intro { position: relative; background: #000; color: #8d9366; text-align: center; z-index: 1; }
 .section-intro p { font-size: 18px; line-height: 2; }
@@ -119,9 +132,14 @@ img { width: 100%; display: block; }
 .layer-02 { position: relative; top: 0; width: 540px; overflow: hidden; }
 .layer-02.fixed { position: fixed; top: 50vh; }
 .section-date { height: 50vh; overflow: hidden; position: relative; }
-.section-date__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../img/wedding5.jpg)no-repeat top; filter: blur(10px); scale: 1.1; }
-.section-date p { position: absolute; top: 50%; left: 50%; translate: -50% -50%; width: 100%; text-align: center; color: #fff; font-size: 24px; line-height: 1.5; }
-.section-location__map { height: 65vh; margin-left: 30px; }
+.section-date__desc { position: absolute; top: 0; left: 0; }
+.section-date__desc.blur { color: rgba(255, 255, 255, 0.1); }
+.section-date__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../img/wedding-photo-10.jpeg)no-repeat top; filter: blur(10px); scale: 1.1; }
+.section-date p { position: absolute; top: 50%; left: 50%; translate: -50% -50%; width: 100%; text-align: center; color: #fff; font-size: 22px; line-height: 1.5; }
+.section-location__map { height: 65vh; margin: 0 15px; }
+.section-location__btn { display: flex; width: calc(100% - 30px); margin: 15px auto 0; }
+.section-location__btn a { color: var(--color-primary); padding: 10px 0; text-decoration: none; border: 1px solid; width: 33.33%; text-align: center; }
+.section-location__btn a:not(:first-child) { margin-left: -1px; }
 .section-location__desc { text-align: end; padding-right: 30px; padding-top: 30px; padding-bottom: 100px; }
 .section-location__desc span { color: #8d9366; }
 .section-location__desc p { margin-top: 10px; }
@@ -132,8 +150,18 @@ img { width: 100%; display: block; }
 .section-marquee__left { position: absolute; top: 0; left: -300px; }  
 .section-marquee__right { position: absolute; bottom: 0; }
 
-.section-gallery { }
+.section-gallery { padding: 80px 0; }
 .section-gallery .box { width: 400px; height: 400px; background: #fff; margin: 60px auto; overflow: hidden;  }
+
+.section-account { padding: 80px 0; }
+.section-account p { color: #8d9366; text-align: center; }
+.section-account__desc { margin-bottom: 100px; }
+.section-account__profile { position: relative; padding-bottom: 100px; }
+.section-account__profile-img { width: 80%; margin: 0 auto; padding: 60px 0; }
+.section-account__profile-title { position: absolute; top: 300px; right: -10px; font-family: var(--font-primary); font-size: 160px; text-transform: uppercase; color: var(--color-primary); }
+.section-account__profile-desc-item { margin: 0 auto; width: 80%; color: var(--color-primary); display: flex; justify-content: space-between; }
+.section-account__profile-desc-item:not(:last-child) { margin-bottom: 8px; }
+.section-account__profile-desc-item a { border-bottom: 1px solid var(--color-primary); font-size: 15px; margin-bottom: 5px; }
 
 
 @media (max-width: 540px) {

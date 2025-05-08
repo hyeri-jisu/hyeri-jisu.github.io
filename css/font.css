@@ -1,14 +1,22 @@
 @charset "utf-8";
 
 @font-face {
-    font-family: 'PSYCHEROS';
-    font-weight: 400;
-    src: url('./fonts/PSYCHEROS-Regular.woff') format('woff');
-}
-
-@font-face {
     font-family: 'OTNeglige';
     font-weight: 600;
     src: url('../fonts/OTNeglige-L.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Eulyoo1945';
+    font-weight: 400;
+    src: url('../fonts/Eulyoo1945-Regular.woff') format('woff'),
+         url('../fonts/Eulyoo1945-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Eulyoo1945';
+    font-weight: 600;
+    src: url('../fonts/Eulyoo1945-SemiBold.woff') format('woff'),
+         url('../fonts/Eulyoo1945-SemiBold.woff2') format('woff2');
 }
 

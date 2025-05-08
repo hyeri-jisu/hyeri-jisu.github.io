@@ -10,10 +10,11 @@ main_visual_motion();
 appear_motion();
 pin_motion();
 bg_change();
+split_text();
 marqee();
 gallery();
 calendar();
-
+profile();
 
 
 /* **************************************** *
@@ -76,6 +77,7 @@ function appear_motion(){
         });
     })
 }
+
 
 
 function pin_motion(){
@@ -160,6 +162,7 @@ function bg_change(){
         textTriggers.push(trigger);
     });
 
+    
 
     ScrollTrigger.create({
         trigger: '.section-intro__three',
@@ -189,10 +192,12 @@ function bg_change(){
             });
             document.querySelector('.layer-01').classList.add('fixed')
             document.querySelector('.layer-02').classList.add('fixed')
+            console.log(3)
         },
         onEnterBack: function(){
             document.querySelector('.layer-01').classList.add('fixed')
             document.querySelector('.layer-02').classList.add('fixed')
+            console.log(4)
         }
     });
 
@@ -216,6 +221,30 @@ function bg_change(){
 
 
 }
+
+
+
+function split_text(){
+
+    ScrollTrigger.create({
+        trigger: '.last-txt',
+        start: 'top 40%',
+        //markers: 1,
+        onEnter: function(){
+            let split = SplitText.create(".split", { type: "words", aria: "hidden" });
+    
+        gsap.from(split.words, {
+            opacity: 0,
+            duration: 2,
+            ease: "sine.out",
+            stagger: 0.2,
+        });
+        },
+    });
+
+    
+}
+
 
 
 function marqee(){
@@ -329,18 +358,18 @@ function calendar(){
         },
         onRenderCell({date, cellType}) {
             let dates = [1, 5, 10, 15, 25, 30],
-                emoji = ['💕', '💍', '💒', '👰', '🤵'],
+                //emoji = ['💕', '💍', '💒', '👰', '🤵'],
                 isDay = cellType === 'day',
                 _date = date.getDate(),
-                shouldChangeContent = isDay && dates.includes(_date),
-                randomEmoji = emoji[Math.floor(Math.random() * emoji.length)];
+                shouldChangeContent = isDay && dates.includes(_date);
+                //randomEmoji = emoji[Math.floor(Math.random() * emoji.length)];
         
             return {
-                html: shouldChangeContent ? randomEmoji : undefined,
-                classes: shouldChangeContent ? '-emoji-cell-' : undefined,
-                attrs: {
-                    title: shouldChangeContent ? randomEmoji : ''
-                }
+                // html: shouldChangeContent ? randomEmoji : undefined,
+                // classes: shouldChangeContent ? '-emoji-cell-' : undefined,
+                // attrs: {
+                //     title: shouldChangeContent ? randomEmoji : ''
+                // }
             }
         },
         firstDay: 0,
@@ -359,6 +388,26 @@ function calendar(){
 
 }
 
+
+
+function profile(){
+
+    const img = document.querySelectorAll('.section-account__profile-img');
+
+    img.forEach((item)=>{
+        gsap.to(item, {
+            y: -100, 
+            scrollTrigger: {
+                trigger: item, 
+                start: "top 50%", 
+                end: "bottom 50%",
+                scrub: true,
+                //markers:1,
+            }
+        });
+    })
+    
+}
         
 })();    
 
