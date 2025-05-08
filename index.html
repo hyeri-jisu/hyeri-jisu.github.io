@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혜리❤️지수 결혼합니다</title>
-
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
+    
+        function sendTemplate() {
+          Kakao.Link.sendCustom({
+            templateId: 120426,
+          });
+        }
+      </script>
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <button onclick="sendTemplate()">📩 카카오톡으로 청첩장 보내기</button>
+    
     <div class="container">
         <div class="wrap">
             <div class="layer-01">
@@ -208,9 +219,7 @@
         </div>
     </div>
 
-    <div id="btnKakao">
-        <img src="/img/sns_kakao.png" id="kakao-link-btn" alt="카카오톡 링크 공유하기">
-    </div>
+    <button id="kakao-link-btn">카카오톡으로 공유</button>
     <script src="./js/greensock/gsap.min.js"></script>
 	<script src="./js/greensock/ScrollTrigger.min.js"></script>
 	<script src="./js/greensock/DrawSVGPlugin.min.js"></script>
@@ -220,30 +229,5 @@
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=8wotlvp4tu"></script>
 	<script src="./js/script.js"></script>
 	<script src="./js/naver-map.js"></script>
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script type='text/javascript'>
-        Kakao.init('276a8b83db146933e461c882d45fd7ce');
-
-        // Kakao.Link.createScrapButton({
-        //     container: '#kakao-link-btn',
-        //     requestUrl: 'https://hyeri-jisu.github.io/',
-        //     templateId : 120426
-        // });
-
-        Kakao.API.request({
-  url: '/v2/api/talk/memo/scrap/send',
-  data: {
-    request_url: 'https://developers.kakao.com',
-    template_id: 120426,
-  },
-})
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log(error);
-  });
-    </script>
-
 </body>
 </html>
