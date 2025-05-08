@@ -224,11 +224,24 @@
     <script type='text/javascript'>
         Kakao.init('276a8b83db146933e461c882d45fd7ce');
 
-        Kakao.Link.createScrapButton({
-            container: '#kakao-link-btn',
-            requestUrl: 'https://hyeri-jisu.github.io/',
-            templateId : 120426
-        });
+        // Kakao.Link.createScrapButton({
+        //     container: '#kakao-link-btn',
+        //     requestUrl: 'https://hyeri-jisu.github.io/',
+        //     templateId : 120426
+        // });
+
+        Kakao.API.request({
+  url: 'https://hyeri-jisu.github.io/',
+  data: {
+    template_id: 120426,
+  },
+})
+  .then(function(response) {
+    console.log(response);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
     </script>
 
 </body>
