@@ -1,234 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>혜리❤️지수 결혼합니다</title>
+    <!-- og 정보 -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="페이지 제목" />
+    <meta property="og:description" content="페이지 설명" />
+    <meta property="og:image" content="https://example.com/image.jpg" />
+    <meta property="og:url" content="https://example.com" />
+    <!-- 카카오 공유하기 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
+    <link rel="stylesheet" href="./css/air-datepicker.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/var.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/rwd-layout.css">
+    
 </head>
 <body>
-    
-
     <div class="container">
-        <div class="wrap">
-            <div class="layer-01">
+        <!-- 헤더/메인 -->
+        <header class="header">
+            <div class="wrap">
                 <div class="main-visual">
-                    <div class="main-visual__bg">
-                        <video autoplay loop width="540">
-                            <source src="./img/grass.mp4" type="video/mp4" />
-                        </video>
-                    </div>
-                    <div class="main-visual__title">SAVE THE DATE</div>
-                </div>
-                
-                <div class="main-visual__img up-motion"></div>
-                
-                <div class="section-intro">
-                    <div class="section-intro__first">
-                        <div class="section-intro__first__item">
-                            <p class="appear-motion">여름의 햇살이 따스했던 날</p>
-                            <p class="appear-motion">우리는 처음 만났습니다.</p>
-                        </div>
-                        
-                        <div class="section-intro__first__item">
-                            <p class="appear-motion">푸른 나무 사이로</p>
-                            <p class="appear-motion">불어오는 바람처럼</p>
-                        </div>
-                    </div>
+                    <div class="main-visual__title">
+                        <h1>Save the Date</h1>
+                        <p>나란한 이름으로 보내는 첫 번째 편지</p>
+                    </div><!-- .main-visual__title -->
     
-                    <div class="section-intro__second">
-                        <div class="section-intro__img">
-                            <div class="section-intro__img-item">
-                                <img src="./img/wedding-photo-13.jpeg" alt="">
-                            </div>
-                            
-                            <div class="section-intro__img-item">
-                                <img src="./img/wedding-photo-17.jpeg" alt="">
-                            </div>
-                        </div>
-    
-                        <div class="section-intro__txt">
-                            <div class="section-intro__txt-item">
-                                <p>서로에게 <br />다정한 위로가 되고</p>
-                            </div>
-    
-                            <div class="section-intro__txt-item">
-                                <p>같이 있으면 <br />자연스럽게 닮아가는</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="section-intro__three">
-                        <div class="section-intro__three-inner">
-                            <div class="section-intro__three-txt">
-                                <p class="appear-motion">우리는 이제</p>
-                                <p class="appear-motion">서로를 더욱 단단히 안아주며</p>
-                                <p class="appear-motion">함께 걸어가려 합니다.</p>
-                            </div>
-                            
-                            <div class="calendar appear-motion"></div>
+                    <div class="main-visual__desc">
+                        <p>2025.07.20 SUN 01:30PM</p>
+                        <span>W웨딩 국민연금공단 1층 컨벤션홀</span>
+                    </div><!-- .main-visual__desc -->
+                </div><!-- .main-visual -->
+            </div><!-- .wrap -->
+        </header><!-- .header -->
 
-                            <div class="section-intro__three-txt">
-                                <p class="appear-motion">햇살 가득한 이 날</p>
-                                <p class="appear-motion">우리의 계절을 함께해 줄</p>
-                                <p class="appear-motion">소중한 분들을 초대합니다.</p>
-                            </div>
-    
-                            <div class="section-intro__three-txt last-txt">
-                                <p class="appear-motion">종일·명주의 아들 지수</p>
-                                <p class="appear-motion">형관·미정의 딸 혜리</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="layer-02">
-                <div class="section-date__bg"></div>
-                <div class="section-date">
+        <!-- 소개 -->
+        <section class="main-intro">
+            <div class="wrap">
+                <div class="main-intro__desc">
+                    <p class="main-intro__desc-item">
+                        여름의 햇살이 따스했던 날<br />
+                        우리는 처음 만났습니다.
+                    </p><!-- .main-intro__desc-item -->
+
+                    <p class="main-intro__desc-item">
+                        푸른 나무 사이로 불어오는 바람처럼<br />
+                        서로에게 다정한 위로가 되고<br />
+                        같이 있으면 자연스럽게 닮아가는
+                    </p><!-- .main-intro__desc-item -->
                     
-                    <p class="section-date__desc main split">2025.07.20 (일) 오후 1시 30분<br />
-                        W웨딩 국민연금공단 1층 컨벤션홀</p>
-                        <p class="section-date__desc blur">2025.07.20 (일) 오후 1시 30분<br />
-                            W웨딩 국민연금공단 1층 컨벤션홀</p>
-                </div>
-                
-                <div class="section-location">
-				    <div class="section-location__map" data-lat="35.1779992" data-lng="129.0757805" data-zoom="16"></div>
-                    <div class="section-location__btn">
-                        <a href="https://tmap.life/99c2e193">티맵</a>
-                        <a href="https://kko.kakao.com/lHWw21txkp">카카오맵</a>
-                        <a href="https://naver.me/xOx4WPXw">네이버지도</a>
-                    </div>
-
-                    <ul class="section-location__desc">
-                        <li>
-                            <span>지하철</span>
-                            <p>1호선 시청역 하차(2번 출구 이용)</p>
-                        </li>
-
-                        <li>
-                            <span>버스</span>
-                            <p>29, 86, 87, 99, 110-1, 131, 141, 179</p>
-                        </li>
-
-                        <li>
-                            <span>주차장</span>
-                            <p>국민연금 빌딩 지하2층~4층 (3시간 무료주차)</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="section-marquee">
-                    <div class="section-marquee__item section-marquee__left">
-                        <p>Gallery Gallery Gallery</p>
-                    </div>
-                    <div class="section-marquee__item section-marquee__right">
-                        <p>Gallery Gallery Gallery</p>
-                    </div>
-                </div>
-                  
-                <div class="section-gallery">
-                    <div class="box">
-                        <img src="./img/wedding-photo-13.jpeg" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./img/wedding-photo-12.jpeg" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./img/wedding-photo-05.jpeg" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./img/wedding-photo-07.jpeg" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./img/wedding-photo-14.jpeg" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./img/wedding-photo-15.jpeg" alt="">
-                    </div>
-                </div>
-
-                <div class="section-account">
-                    <div class="section-account__desc">
-                        <p class="appear-motion">멀리서도 축하의 마음을</p>
-                        <p class="appear-motion">전하고 싶으신 분들을 위해</p>
-                        <p class="appear-motion">계좌번호를 안내드립니다</p>
-                        <p class="appear-motion">소중한 축하를 보내주셔서 감사드리며</p>
-                        <p class="appear-motion">따뜻한 마음에 깊이 감사드립니다.</p>
-                    </div>
+                    <p class="main-intro__desc-item">
+                        우리는 이제 서로를 더욱 단단히 안아주며<br />
+                        함께 걸어가려 합니다.
+                    </p><!-- .main-intro__desc-item -->
                     
-                    <div class="section-account__profile">
-                        <div class="section-account__profile-img">
-                            <img src="./img/wedding-photo-11.jpeg" alt="">
-                        </div>
+                    <p class="main-intro__desc-item">
+                        햇살 가득한 이 날<br />
+                        우리의 계절을 함께해 줄 소중한 분들을 초대합니다.
+                    </p><!-- .main-intro__desc-item -->
+                </div><!-- .main-intro__desc -->
 
-                        <div class="section-account__profile-title">groom</div>
-                        
-                        <div class="section-account__profile-desc">
-                            <div class="section-account__profile-desc-item appear-motion">
-                                <span class="copy-text">신랑 123-4567-8910</span>
-                                <a class="copy-btn">복사하기</a>
-                            </div>
-                            <div class="section-account__profile-desc-item appear-motion">
-                                <span class="copy-text">신랑 아버지 123-4567-8910</span>
-                                <a class="copy-btn">복사하기</a>
-                            </div>
-                            <div class="section-account__profile-desc-item appear-motion">
-                                <span class="copy-text">신랑 어머니 123-4567-8910</span>
-                                <a class="copy-btn">복사하기</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="main-intro__name">
+                    <div class="main-intro__name-item">
+                        <span>신랑</span>
+                        <p>송지수</p>
+                    </div><!-- .main-intro__name-item -->
 
-                    <div class="section-account__profile">
-                        <div class="section-account__profile-img">
-                            <img src="./img/wedding-photo-10.jpeg" alt="">
-                        </div>
+                    <div class="main-intro__name-item">
+                        <span>신부</span>
+                        <p>최혜리</p>
+                    </div><!-- .main-intro__name-item -->
+                </div><!-- .main-intro__name -->
 
-                        <div class="section-account__profile-title">bride</div>
-                        
-                        <div class="section-account__profile-desc">
-                            <div class="section-account__profile-desc-item appear-motion">
-                                <span class="copy-text">신부 123-4567-8910</span>
-                                <a class="copy-btn">복사하기</a>
-                            </div>
-                            <div class="section-account__profile-desc-item appear-motion">
-                                <span class="copy-text">신부 아버지 123-4567-8910</span>
-                                <a class="copy-btn">복사하기</a>
-                            </div>
-                            <div class="section-account__profile-desc-item appear-motion">
-                                <span class="copy-text">신부 어머니 서미정 123-4567-8910</span>
-                                <a class="copy-btn">복사하기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="main-intro__img">
+                </div><!-- .main-intro__img -->
+            </div><!-- .wrap -->
+        </section><!-- .main-intro -->
+
+        <!-- 부모님편지/아기사진 -->
+        <section class="main-parents">
+            <div class="main-parents__item main-parents__item--groom">
+                <p class="main-parents__item-title">신랑 부모님</p>
+
+                <div class="main-parents__item-img">
+                    <span><strong>종일·명주</strong>의 아들 <strong>지수</strong></span>
+                </div><!-- .main-parents__item-img -->
+
+                <div class="main-parents__item-letter">
+                    <p>사랑하는 아들 멋지고 자랑스럽게 커주어</p>
+                    <p>고맙고 감사하다 생각하면 할수록 소중한 나의 아들</p>
+                    <p>언제나 최선을 다하는 모습으로</p>
+                    <p>가정도 소중히 가꾸어 가길..</p>
+                </div><!-- .main-parents__item-letter -->
+            </div><!-- .main-parents__item -->
+
+            <div class="main-parents__item main-parents__item--bride">
+                <p class="main-parents__item-title">신부 부모님</p>
+
+                <div class="main-parents__item-img">
+                    <span><strong>형관·미정</strong>의 딸 <strong>혜리</strong></span>
+                </div><!-- .main-parents__item-img -->
+
+                <div class="main-parents__item-letter">
+                    <p>예쁜 딸 너무나 소중한 우리딸</p>
+                    <p>네가 있어 너무나 행복한 날들이었어</p>
+                    <p>결혼을 앞두고있으니 가슴이 허하구나</p>
+                    <p>너희 가정도 화목하게 잘 살거라 믿어</p>
+                    <p>엄마가 간절히 응원한다 사랑해 딸</p>
+                </div><!-- .main-parents__item-letter -->
+            </div><!-- .main-parents__item -->
+        </section><!-- .main-parents -->
+
+        <!-- 손편지/웨딩사진 -->
+        <section class="main-letter">
+            <div class="main-letter__img main-letter__img--groom">
+                <div class="main-letter__img-desc">
+                    <p>
+                        언제나 날 웃게하는 <br />
+                        사랑스러운 지수 <br />
+                        내 삶에 나타나줘서 고마워요 <br />
+                        지금처럼 평생 내 옆에서 <br />
+                        힘이 되줘요!
+                    </p>
+                </div><!-- .main-letter__img-desc -->
+            </div><!-- .main-letter__img -->
+
+            <div class="main-letter__img main-letter__img--bride">
+                <div class="main-letter__img-desc">
+                    <p>
+                        나의 귀엽고 소중한 혜리 <br />
+                        처음 본 순간부터 지금까지 <br />
+                        내 가슴은 너로 가득차있어 <br />
+                        함께 늙고 싶은 사람 사랑해요
+                    </p>
+                </div><!-- .main-letter__img-desc -->
+            </div><!-- .main-letter__img -->
+        </section><!-- .main-letter -->
+
+        <!-- 갤러리 -->
+        <section class="main-gallery">
+            <a href="./img/wedding-photo-02.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-02.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-03.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-03.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-05.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-05.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-07.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-07.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-09.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-09.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-10.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-10.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-11.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-11.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-12.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-12.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-13.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-13.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-14.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-14.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-15.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-15.jpeg" />
+            </a>
+            <a href="./img/wedding-photo-16.jpeg" data-lg-size="500-749">
+                <img src="./img/wedding-photo-16.jpeg" />
+            </a>
+        </section><!-- .main-gallery -->
+
+        <!-- 캘린더 -->
+        <section class="main-calrender">
+            <div class="calendar"></div>
+        </section><!-- .main-calrender -->
+
+        <!-- 오시는길 -->
+        <section class="main-location">
+            <div class="main-location__map" data-lat="35.1779992" data-lng="129.0757805" data-zoom="16"></div>
+            <div class="main-location__btn">
+                <a href="https://tmap.life/99c2e193">티맵</a>
+                <a href="https://kko.kakao.com/lHWw21txkp">카카오맵</a>
+                <a href="https://naver.me/xOx4WPXw">네이버지도</a>
             </div>
 
-        </div>
+            <ul class="main-location__desc">
+                <li>
+                    <span>지하철</span>
+                    <p>1호선 시청역 하차(2번 출구 이용)</p>
+                </li>
+
+                <li>
+                    <span>버스</span>
+                    <p>29, 86, 87, 99, 110-1, 131, 141, 179</p>
+                </li>
+
+                <li>
+                    <span>주차장</span>
+                    <p>국민연금 빌딩 지하2층~4층 (3시간 무료주차)</p>
+                </li>
+            </ul>
+        </section><!-- .main-location -->
+
+        <!-- 마음전하실곳 -->
+        <section class="main-account">
+
+        </section><!-- .main-account -->
+
+        <!-- 푸터/공유하기 -->
+        <footer class="footer">
+            <div class="share-btn">
+                <span>카카오톡 공유하기</span>
+            </div><!-- .share-btn -->
+
+            <p class="copyright">ⓒHYERI</p>
+        </footer>
     </div>
 
-    <div class="nav">
-        <div class="nav-item scroll-top">
-            <span>TOP</span>
-        </div>
-        <div class="nav-item share-btn">
-            <span>공유</span>
-        </div>
-    </div>
-    <script src="./js/greensock/gsap.min.js"></script>
-	<script src="./js/greensock/ScrollTrigger.min.js"></script>
-	<script src="./js/greensock/DrawSVGPlugin.min.js"></script>
-	<script src="./js/greensock/SplitText.min.js"></script>
-	<script src="./js/air-datepicker.js"></script>
-    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
 	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=8wotlvp4tu"></script>
-	<script src="./js/script.js"></script>
-	<script src="./js/naver-map.js"></script>
+    <script src="./js/air-datepicker.js"></script>
+    <script src="./js/naver-map.js"></script>
+    <script src="./js/script.js"></script>
 </body>
-</html>

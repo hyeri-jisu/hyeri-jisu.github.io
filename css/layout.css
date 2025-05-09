@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+/*
+ * File    : layout.css
+ * Author  : HREE
+ *
+ * GLOBAL
+ * LAYOUT
+ */
+
+
+
+/* **************************************** *
+ * GLOBAL
+ * **************************************** */
+html { font-size: 6.25%; }
+html.safari.desktop {
+    font-size: 1px;
+}
+ 
+body { overflow-x: hidden; font-family: var(--font-primary); font-size: 16rem; word-break: keep-all; background-color: var(--color-white); color: var(--color-black); overflow-y: scroll; }
+a { color: var(--color-white); text-decoration: none; }
+button { background: none; border: none; margin: 0; padding: 0; color: var(--color-white); }
+section { padding: 140rem 0; }
+
+/* WRAP */
+.wrap { max-width: 540rem; margin: 0 auto; position: relative; }
+
+
+
+
+/* **************************************** *
+ * LAYOUT
+ * **************************************** */
+/* main-visual */
+.main-visual { position: relative; width: 100%; padding-top: 149%; background: url(../img/wedding-photo-13.jpeg)no-repeat center; background-size: cover; }
+.main-visual::after { position: absolute; bottom: 0; content: ''; width: 100%; height:300rem; background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1)); }
+.main-visual__title { position: absolute; top: 30rem; left: 50%; translate: -50% 0; text-align: center; }
+.main-visual__title h1 { font-size: 52rem; white-space: nowrap; color: var(--color-primary); }
+.main-visual__title p { color: var(--color-secondry); }
+.main-visual__desc { position: absolute; bottom: 30rem; left: 50%; translate: -50% 0; color: var(--color-primary); white-space: nowrap; text-align: center; z-index: 1; }
+.main-visual__desc p { font-size: var(--font-size-02); margin-bottom: 6rem; }
+
+/* main-intro */
+.main-intro { padding-bottom: 0; }
+.main-intro__desc { text-align: center; font-size: var(--font-size-03); line-height: 1.5; }
+.main-intro__desc-item:not(:first-child) { margin-top: 20rem; }
+.main-intro__name { display: flex; justify-content: center; gap: 100rem; margin: 100rem 0; font-size: var(--font-size-03); }
+.main-intro__name-item { text-align: center; }
+.main-intro__name-item span { color: var(--color-primary); }
+.main-intro__name-item p { margin-top: 5rem; font-size: var(--font-size-02); }
+.main-intro__img { width: 100%; padding-top: 149%; background: url(../img/wedding-photo-05.jpeg)no-repeat center; background-size: cover; }
+
+/* main-parents */
+.main-parents { background: var(--color-primary); }
+.main-parents__item:last-child { margin-top: 120rem; }
+.main-parents__item-title { text-align: center; margin-bottom: 16rem; font-size: var(--font-size-02); }
+.main-parents__item-img { position: relative; margin: 0 auto; width: 80%; padding-top: 80%; background: url(../img/baby01.jpeg)no-repeat center; background-size: cover; overflow: hidden; }
+.main-parents__item-img span { position: absolute; top: 20rem; left: 20rem; }
+.main-parents__item-img span strong { font-size: var(--font-size-03); }
+.main-parents__item-letter { margin-top: -30rem; z-index: 1; position: relative; }
+.main-parents__item-letter p { background: var(--color-white); display: inline-block; font-size: var(--font-size-02); margin-bottom: 8rem; font-family: 'Future_tree'; padding: 2rem 10rem; }
+.main-parents__item--groom .main-parents__item-letter { margin-left: 25rem; rotate: -5deg; }
+.main-parents__item--bride .main-parents__item-letter { margin-left: 60rem; rotate: 5deg; }
+.main-parents__item--bride .main-parents__item-img { background-image: url(../img/baby02.jpg); }
+
+/* main-letter */
+.main-letter { padding: 0; }
+.main-letter__img { position: relative; }
+.main-letter__img-desc { position: absolute; color: var(--color-white); font-size: var(--font-size-02); font-family: 'Yoonwoo'; line-height: 1.3; }
+.main-letter__img--groom { width: 100%; padding-top: 149%; background: url(../img/wedding-photo-16.jpeg)no-repeat center; background-size: cover; }
+.main-letter__img--groom .main-letter__img-desc { top: 57rem; left: 39rem; rotate: -9deg; }
+.main-letter__img--bride { width: 100%; padding-top: 149%; background: url(../img/wedding-photo-17.jpeg)no-repeat center; background-size: cover; }
+.main-letter__img--bride .main-letter__img-desc { top: 108rem; right: 18rem; rotate: 7deg; font-family: 'Yedang';  }
+
+/* main-gallery */
+.main-gallery { padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
+.main-gallery a { aspect-ratio: 1 / 1; overflow: hidden; display: block; }
+.main-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* main-calrende */
+.main-calrender { padding: 60rem 0; }
+
+/* main-location */
+.main-location { padding: 0 0 140rem; }
+.main-location__map { height: 50vh; }
+.main-location__btn { display: flex; width: calc(100% - 30px); margin: 15px auto 0; }
+.main-location__btn a { color: var(--color-primary); padding: 10px 0; text-decoration: none; border: 1px solid; width: 33.33%; text-align: center; }
+.main-location__btn a:not(:first-child) { margin-left: -1px; }
+.main-location__desc { text-align: center; padding-top: 30px; }
+.main-location__desc span { color: #8d9366; }
+.main-location__desc p { margin-top: 10px; }
+.main-location__desc li:not(:last-child) { margin-bottom: 30px; }
+
+/* main-account */
+.main-account { background: var(--color-primary); }
+
+/* footer */
+.footer { padding: 80rem 0 40rem; text-align: center; }
+.share-btn { background: #fde500; display: inline-block; font-size: var(--font-size-03); padding: 12rem 30rem; border-radius: 10rem; }
+.copyright { padding-top: 80rem; }

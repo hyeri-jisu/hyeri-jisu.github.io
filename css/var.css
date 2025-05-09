@@ -1,0 +1,20 @@
+:root {
+    /* COLOR */
+    --color-white: #FFF;
+    --color-black: #000;
+    --color-primary: #8d9366;
+    --color-secondry: #868686;
+    --color-third: #FEDF6A;
+
+    /* FONT */
+    --font-primary: 'Pretendard', sans-serif;
+    --font-secondary: 'Pretendard', sans-serif;
+
+    --letter-spacing: 0em;
+
+    --font-size-01: 36rem;
+    --font-size-02: 20rem;
+    --font-size-03: 18rem;
+    --font-size-04: 16rem;
+    --font-size-05: 14rem;
+}

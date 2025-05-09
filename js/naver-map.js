@@ -1,4 +1,4 @@
-const mapNaver = document.querySelector('.section-location__map');
+const mapNaver = document.querySelector('.main-location__map');
 
 if( mapNaver != null ){
 
