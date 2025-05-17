@@ -44,13 +44,15 @@ img { width: 100%; display: block; }
 .main-visual__title-txt span + span { margin-top: 8rem; }
 .main-visual__title-txt p { font-size: 16rem; }
 .main-visual__title-txt p + p { margin-top: 8rem; }
+.main-visual__bgm { position: absolute; top: 20rem; right: 20rem; }
+.main-visual__bgm-toggle { color: #afafaf; font-size: 18rem; }
 /* .main-visual__title h1 { font-size: 52rem; white-space: nowrap; color: var(--color-primary); font-family: 'FranciscoDemo'; }
 .main-visual__title p { color: var(--color-secondry); }
 .main-visual__desc { position: absolute; bottom: 30rem; left: 50%; translate: -50% 0; color: var(--color-primary); white-space: nowrap; text-align: center; z-index: 1; }
 .main-visual__desc p { font-size: var(--font-size-02); margin-bottom: 6rem; } */
 
 /* main-intro */
-.main-intro { padding-bottom: 200rem; background: url(../img/제목-없음-3.jpg)no-repeat center; background-size: cover; }
+.main-intro { padding-bottom: 200rem; background: url(../img/제목-없음-3.jpg)no-repeat center; background-size: cover; background-position-y: bottom; }
 .main-intro__desc { text-align: center; font-size: 16rem; line-height: 1.5; font-family: var(--font-primary); margin-bottom: 60rem; }
 .main-intro__desc-item:not(:first-child) { margin-top: 20rem; }
 .main-intro__name { position: relative; display: flex; justify-content: center; gap: 100rem; font-size: var(--font-size-03); }
@@ -59,7 +61,7 @@ img { width: 100%; display: block; }
 .main-intro__name-item:last-child { top: 0rem; right: 60rem; }
 .main-intro__name-item span { color: var(--color-primary); font-size: 14rem; }
 .main-intro__name-item p { font-size: 18rem; }
-.main-intro__img { width: 100%; padding-top: 149%;  }
+.main-intro__img { width: 100%; padding-top: 149%; }
 
 /* main-parents */
 .main-parents { background: #4d660e; position: relative; }

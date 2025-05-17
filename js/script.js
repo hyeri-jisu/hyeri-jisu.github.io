@@ -21,6 +21,7 @@ share();
 gallery();
 calendar();
 clipboard();
+bgm();
 
 
 
@@ -96,12 +97,12 @@ function share(){
 
 function gallery(){
 
-    lightGallery(document.querySelector('.main-gallery'), {
+    lightGallery(document.querySelector('.main-gallery__inner'), {
         animateThumb: false,
         zoomFromOrigin: false,
         allowMediaOverlap: true,
         toggleThumb: true,
-        download: true
+        download: false
     });
     
 }
@@ -148,6 +149,25 @@ function clipboard(){
         });
     });
      
+}
+
+
+function bgm(){
+    const bgm = document.getElementById('bgm');
+    const toggleBtn = document.querySelector('.main-visual__bgm-toggle');
+    let isPlaying = false;
+
+    toggleBtn.addEventListener('click', () => {
+        if (isPlaying) {
+          bgm.pause();
+          toggleBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+        } else {
+          bgm.play();
+          toggleBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+        }
+        isPlaying = !isPlaying;
+    });
+      
 }
 
 

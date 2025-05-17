@@ -15,6 +15,7 @@
     <!-- 카카오 공유하기 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <!-- css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery.min.css">
     <link rel="stylesheet" href="./css/air-datepicker.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -30,6 +31,17 @@
         <header class="header">
             <div class="wrap">
                 <div class="main-visual">
+                    <div class="main-visual__bgm">
+                        <audio id="bgm" loop autoplay>
+                            <source src="./img/romantic-pop.mp3" type="audio/mpeg">
+                            브라우저가 오디오를 지원하지 않습니다.
+                        </audio>
+                        
+                        <button class="main-visual__bgm-toggle">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    
                     <div class="main-visual__title-txt">
                         <span class="motion-up" data-motion-delay="0">송지수 그리고 최혜리</span>
                         <span class="motion-up" data-motion-delay="0.2">나란한 이름으로 전하는 첫 번째 편지</span>
@@ -195,40 +207,40 @@
         <section class="main-gallery">
             <div class="wrap">
                 <div class="main-gallery__inner">
-                    <a href="./img/wedding-photo-02.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-02.jpeg">
                         <img src="./img/wedding-photo-02.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-03.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-03.jpeg">
                         <img src="./img/wedding-photo-03.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-05.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-05.jpeg">
                         <img src="./img/wedding-photo-05.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-07.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-07.jpeg">
                         <img src="./img/wedding-photo-07.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-09.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-09.jpeg">
                         <img src="./img/wedding-photo-09.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-10.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-10.jpeg">
                         <img src="./img/wedding-photo-10.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-11.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-11.jpeg">
                         <img src="./img/wedding-photo-11.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-12.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-12.jpeg">
                         <img src="./img/wedding-photo-12.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-13.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-13.jpeg">
                         <img src="./img/wedding-photo-13.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-14.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-14.jpeg">
                         <img src="./img/wedding-photo-14.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-15.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-15.jpeg">
                         <img src="./img/wedding-photo-15.jpeg" />
                     </a>
-                    <a href="./img/wedding-photo-16.jpeg" data-lg-size="500-749">
+                    <a href="./img/wedding-photo-16.jpeg">
                         <img src="./img/wedding-photo-16.jpeg" />
                     </a>
                 </div><!-- .main-gallery__inner -->
