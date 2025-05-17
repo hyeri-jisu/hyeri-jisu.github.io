@@ -16,6 +16,7 @@
 /* **************************************** *
  * INIT
  * **************************************** */
+motion();
 share();
 gallery();
 calendar();
@@ -26,6 +27,62 @@ clipboard();
 /* **************************************** *
  * FUNCTIONS
  * **************************************** */
+function motion(){
+
+    // TEXT UP
+    const motionUp = document.querySelectorAll('.motion-up');
+
+    motionUp.forEach((item)=>{
+        let delay = item.getAttribute('data-motion-delay');
+        if( delay == undefined ) { delay = 0 };
+
+        gsap.set(item, {y: 20, autoAlpha: 0});
+        ScrollTrigger.create({
+            trigger: item,
+            start: 'top 80%',
+            //once: true,
+            //markers: 1,
+            onEnter: function(){
+                gsap.to(item, {
+                    y: 0, 
+                    autoAlpha: 1, 
+                    duration: 0.8,
+                    rotation: 0,
+                    ease: 'power1.out',
+                    delay: delay
+                });
+            }
+        });
+    });
+
+    // IMG SCALE
+    gsap.to(".main-visual__img", {
+        scale: 2, // 확대 비율 (최대 크기)
+        scrollTrigger: {
+            trigger: ".main-intro",
+            start: "top bottom",
+            end: "bottom 20%",
+            scrub: true,
+        }
+    });
+
+    // LETTER SECTION
+    ScrollTrigger.create({
+        trigger: '.main-letter',
+        start: 'top 80%',
+        //markers: 1,
+        onEnter: function(){
+            gsap.to('.main-letter__img--groom .main-letter__img-desc', {autoAlpha: 1, duration: 1})
+            gsap.to('.main-letter__img--bride', {autoAlpha: 1, duration: 1, delay: 1})
+            gsap.to('.main-letter__img--bride .main-letter__img-desc', {autoAlpha: 1, duration: 1, delay: 2})
+        }
+    });
+
+    
+}
+
+
+
 function share(){
     Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
     document.querySelector('.share-btn').addEventListener('click',() => {
@@ -44,7 +101,7 @@ function gallery(){
         zoomFromOrigin: false,
         allowMediaOverlap: true,
         toggleThumb: true,
-        download: false
+        download: true
     });
     
 }

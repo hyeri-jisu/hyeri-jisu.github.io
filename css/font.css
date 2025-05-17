@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-@font-face {
     font-family: 'Yoonwoo';
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Yoonwoo.woff') format('woff');
     font-weight: normal;
@@ -19,4 +18,19 @@
     src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/naverfont_04@1.0/Future_tree.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Ownglyph_brilliant-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2412-1@1.0/Ownglyph_brilliant-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Eulyoo1945';
+    font-weight: 400;
+    src: url('../fonts/Eulyoo1945-Regular.woff') format('woff'),
+         url('../fonts/Eulyoo1945-Regular.woff2') format('woff2');
 }
