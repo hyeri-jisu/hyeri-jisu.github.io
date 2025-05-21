@@ -119,5 +119,5 @@ img { width: 100%; display: block; }
 .main-letter__desc { position: absolute; }
 .main-letter__desc p { color: var(--color-white); }
 .main-letter__desc--bride { top: 80rem; left: 35rem; rotate: -9deg; font-family: 'Yoonwoo'; font-size: 20rem;  }
-.main-letter__desc--groom { bottom: 162rem; right: 34rem; rotate: 5deg; font-family: 'Future_tree'; font-size: 18rem; }
+.main-letter__desc--groom { text-align: right; bottom: 162rem; right: 34rem; rotate: 5deg; font-family: 'Future_tree'; font-size: 18rem; }
 .copyright { position: absolute; bottom: 30rem; left: 50%; translate: -50% 0; color: var(--color-white); }
