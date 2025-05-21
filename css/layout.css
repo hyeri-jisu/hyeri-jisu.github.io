@@ -114,8 +114,8 @@ img { width: 100%; display: block; }
 
 /* main-letter */
 .main-letter { position: relative; padding: 0; }
-.main-letter .wrap { position: relative; /*height: 100vh;*/ }
-.main-letter__img { width: 100%; background: url(../img/wedding-photo-20.JPG)no-repeat center; background-size: cover; position: absolute; top: 0; left: 0; /*height: 100vh;*/ }
+.main-letter .wrap { position: relative; height: 100vh; }
+.main-letter__img { width: 100%; background: url(../img/wedding-photo-20.JPG)no-repeat center; background-size: cover; position: absolute; top: 0; left: 0; height: 100vh; }
 .main-letter__desc { position: absolute; }
 .main-letter__desc p { color: var(--color-white); }
 .main-letter__desc--bride { top: 80rem; left: 35rem; rotate: -9deg; font-family: 'Yoonwoo'; font-size: 20rem;  }
