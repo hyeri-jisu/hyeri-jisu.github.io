@@ -140,12 +140,11 @@ function calendar(){
 function clipboard(){
 
     document.querySelectorAll('.copy-btn').forEach(button => {
-        button.addEventListener('click', function () {
-          const container = this.closest('.main-account__item-list li');
-          const span = container.querySelector('span');
-          const textToCopy = span.textContent;
-    
-          navigator.clipboard.writeText(textToCopy)
+        button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const textToCopy = button.getAttribute('data-copy');
+          
+            navigator.clipboard.writeText(textToCopy)
         });
     });
      
