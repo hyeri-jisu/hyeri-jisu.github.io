@@ -19,7 +19,6 @@
 motion();
 share();
 gallery();
-calendar();
 clipboard();
 bgm();
 pin_motion();
@@ -110,43 +109,31 @@ function gallery(){
 }
 
 
-function calendar(){
-
-    new AirDatepicker('.calendar', {
-        inline : true,
-        locale : {
-            days :  ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'] ,
-            daysMin: ['일', '월', '화', '수', '목', '금', '토'],
-            months: ['1월','2월','3월','4월','5월','6월', '7월','8월','9월','10월','11월','12월'],
-            monthsShort: ['1월','2월','3월','4월','5월','6월', '7월','8월','9월','10월','11월','12월'],
-            clear: '취소',
-            dateFormat: 'yyyy-MM-dd',
-        },
-        firstDay: 0,
-        navTitles :  { 
-            days : '<span>yyyy</span>년&nbsp;<span>MM</span>월',
-            months: '<span>yyyy</span>년',
-            years: '<span>yyyy1</span>년&nbsp;-&nbsp;<span>yyyy2</span>년'
-        },
-        prevHtml : '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M10 13L5 7.93671L10 3"></path></svg>',
-        nextHtml : '<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M6 13L11 7.93671L6 3"></path></svg>',
-        selectedDates : '2025-07-20',
-        selectOtherMonths : false,
-        toggleSelected : false,
-    })
-
-}
-
-
 
 function clipboard(){
 
     document.querySelectorAll('.copy-btn').forEach(button => {
         button.addEventListener('click', function (e) {
             e.preventDefault();
+            const container = document.querySelector('.main-account .wrap');
             const textToCopy = button.getAttribute('data-copy');
           
             navigator.clipboard.writeText(textToCopy)
+
+            // 기존 메시지 제거
+            const oldMsg = container.querySelector('.copy-message');
+            if (oldMsg) oldMsg.remove();
+
+            // 새 메시지 생성
+            const msg = document.createElement('p');
+            msg.textContent = '계좌번호가 복사되었습니다';
+            msg.classList.add('copy-message');
+            container.appendChild(msg);
+
+            setTimeout(() => {
+                msg.classList.add('hide');
+                setTimeout(() => msg.remove(), 500);
+            }, 1000);
         });
     });
      
