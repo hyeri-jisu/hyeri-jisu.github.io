@@ -88,7 +88,6 @@ function motion(){
 
 function share(){
     Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
-    
     document.querySelector('.share-btn').addEventListener('click',() => {
         Kakao.Link.sendCustom({
             templateId: 120426,
@@ -116,7 +115,7 @@ function clipboard(){
     document.querySelectorAll('.copy-btn').forEach(button => {
         button.addEventListener('click', function (e) {
             e.preventDefault();
-            const container = document.querySelector('.main-account .wrap');
+            const container = document.querySelector('.main-account__item-list li');
             const textToCopy = button.getAttribute('data-copy');
           
             navigator.clipboard.writeText(textToCopy)
@@ -133,7 +132,7 @@ function clipboard(){
 
             setTimeout(() => {
                 msg.classList.add('hide');
-                setTimeout(() => msg.remove(), 500);
+                //setTimeout(() => msg.remove(), 500);
             }, 1000);
         });
     });
