@@ -88,6 +88,7 @@ function motion(){
 
 function share(){
     Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
+    
     document.querySelector('.share-btn').addEventListener('click',() => {
         Kakao.Link.sendCustom({
             templateId: 120426,
