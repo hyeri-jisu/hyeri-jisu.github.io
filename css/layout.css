@@ -37,12 +37,12 @@ img { width: 100%; display: block; }
 
 /* main-visual */
 .main-visual { position: relative; width: 100%; overflow: hidden; padding: 60rem 0; }
-.main-visual__img { width: calc(100% - 120rem); margin: 20rem auto 40rem; }
+.main-visual__img { width: calc(100% - 100rem); margin: 20rem auto 30rem; overflow: hidden; aspect-ratio: 3/4; }
 .main-visual__title-img { position: absolute; width: calc(100% - 60rem); bottom: 150rem; left: 50%; translate: -50% 0; text-align: center; }
 .main-visual__title-txt { width: 100%; text-align: center; font-family: var(--font-primary) }
 .main-visual__title-txt span { font-size: 14rem; display: block; }
 .main-visual__title-txt span + span { margin-top: 8rem; }
-.main-visual__title-txt p { font-size: 16rem; }
+.main-visual__title-txt p { font-size: 15rem; }
 .main-visual__title-txt p + p { margin-top: 8rem; }
 .main-visual__bgm { position: absolute; top: 20rem; right: 20rem; }
 .main-visual__bgm-toggle { color: #afafaf; font-size: 18rem; }
@@ -52,39 +52,34 @@ img { width: 100%; display: block; }
 .main-visual__desc p { font-size: var(--font-size-02); margin-bottom: 6rem; } */
 
 /* main-intro */
-.main-intro { padding-bottom: 200rem; background: url(../img/제목-없음-3.jpg)no-repeat center; background-size: cover; background-position-y: bottom; }
-.main-intro__desc { text-align: center; font-size: 16rem; line-height: 1.5; font-family: var(--font-primary); margin-bottom: 60rem; }
-.main-intro__desc-item:not(:first-child) { margin-top: 20rem; }
+.main-intro { padding-bottom: 0rem; }
+.main-intro__desc { text-align: center; font-size: 17rem; line-height: 2; font-family: var(--font-primary); margin-bottom: 100rem; }
+.main-intro__desc-first { margin-bottom: 60rem; }
+.main-intro__desc-item:not(:first-child) { margin-top: 60rem; }
+.main-intro__pin { display: flex; flex-direction: column; height: 100vh; }
+.main-intro__pin-img { width: 100%; height: 65vh; position: relative; }
+.main-intro__pin-img-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.main-intro__pin-img-item img { height: 100%; width: 100%; object-fit: cover; }
+.main-intro__pin-txt { width: 100%; height: 35vh; position: relative; }
+.main-intro__pin-txt p { position: absolute; top: 50%; left: 50%; translate: -50% -50%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 2; font-size: 17rem; }
+.main-intro__bg { position: relative; height: 500rem; background: url(../img/제목-없음-3.jpg)no-repeat center; background-size: cover; background-position-y: bottom; }
 .main-intro__name { position: relative; display: flex; justify-content: center; gap: 100rem; font-size: var(--font-size-03); }
 .main-intro__name-item { position: absolute; text-align: center; font-family: var(--font-primary); }
-.main-intro__name-item:first-child { top: 0rem; left: 60rem; }
-.main-intro__name-item:last-child { top: 0rem; right: 60rem; }
+.main-intro__name-item:first-child { top: -17rem; left: 60rem; }
+.main-intro__name-item:last-child { top: -20rem; right: 60rem; }
 .main-intro__name-item span { color: var(--color-primary); font-size: 14rem; }
-.main-intro__name-item p { font-size: 18rem; }
-.main-intro__img { width: 100%; padding-top: 149%; }
+.main-intro__name-item p { font-size: 18rem; margin-top: 3rem; }
 
 /* main-parents */
-.main-parents { background: #4d660e; position: relative; }
+.main-parents { background: #4d660e; position: relative; padding-top: 100rem; max-width: 540rem; margin: 0 auto; }
 .main-parents::before { position: absolute; content: ''; width: 100%; height: 100rem; top: -95rem; left: 0; background: linear-gradient(rgba(0,0,0,0),#4d660e); }
 .main-parents__item:last-child { margin-top: 120rem; }
 .main-parents__item-title { color: var(--color-white); text-align: center; margin-bottom: 16rem; font-size: 16rem; font-family: var(--font-primary); }
 .main-parents__item-title strong { font-size: 20rem; }
-.main-parents__item-img { position: relative; margin: 0 auto; width: 80%; padding-top: 80%; background: url(../img/baby01.jpeg)no-repeat center; background-size: cover; overflow: hidden; }
-.main-parents__item-letter { margin-top: -30rem; z-index: 1; position: relative; }
+.main-parents__item-img { position: relative; margin: 0 auto; width: 80%; padding-top: 80%; background: url(../img/baby01.jpeg)no-repeat center; background-size: cover; overflow: hidden; border-radius: 50%; }
+.main-parents__item-letter { text-align: center; padding: 0 20rem; margin-top: -30rem; z-index: 1; position: relative; }
 .main-parents__item-letter p { background: var(--color-white); display: inline-block; font-size: var(--font-size-02); margin-bottom: 8rem; font-family: 'Future_tree'; padding: 2rem 10rem; }
-.main-parents__item--groom .main-parents__item-letter { margin-left: 25rem; rotate: -5deg; }
-.main-parents__item--bride .main-parents__item-letter { margin-left: 60rem; rotate: 5deg; }
 .main-parents__item--bride .main-parents__item-img { background-image: url(../img/baby02.jpg); }
-
-/* main-letter */
-.main-letter { padding: 0; }
-.main-letter .wrap { position: relative; height: 100vh; }
-.main-letter__img { position: absolute; top: 0; left: 0; height: 100vh; }
-.main-letter__img-desc { position: absolute; color: var(--color-white); font-size: var(--font-size-02); font-family: var(--font-secondary); line-height: 1.3; }
-.main-letter__img--groom { width: 100%; padding-top: 149%; background: url(../img/wedding-photo-16.jpeg)no-repeat center; background-size: cover; }
-.main-letter__img--groom .main-letter__img-desc { opacity: 0; top: 57rem; left: 39rem; rotate: -9deg; }
-.main-letter__img--bride { opacity: 0; width: 100%; padding-top: 149%; background: url(../img/wedding-photo-17.jpeg)no-repeat center; background-size: cover; }
-.main-letter__img--bride .main-letter__img-desc { opacity: 0; top: 108rem; right: 18rem; rotate: 7deg; font-family: var(--font-secondary);  }
 
 /* main-gallery */
 .main-gallery { padding: 0;  }
@@ -107,16 +102,22 @@ img { width: 100%; display: block; }
 .main-location__desc li:not(:last-child) { margin-bottom: 30px; }
 
 /* main-account */
-.main-account { margin: 0 30rem; padding-bottom: 0; }
-.main-account__item:last-child { margin-top: 60rem; }
+.main-account { margin: 0 30rem; }
+.main-account__item { margin-bottom: 60rem; }
 .main-account__item-title { border-bottom: 1px solid var(--color-black); padding-bottom: 10rem; padding-left: 5rem; }
 .main-account__item-list { margin-top: 5rem; }
 .main-account__item-list li { display: flex; justify-content: space-between; padding: 15rem 0 15rem 5rem; }
 .main-account__item-list li a { background: var(--color-black); padding: 3rem 20rem; border-radius: 50rem; display: flex; align-items: center; }
 .main-account__item-desc p { margin-bottom: 5rem; }
+.main-account__share { text-align: center; }
+.share-btn { background: #fde500; color: var(--color-black); display: inline-block; font-size: 16rem; padding: 16rem 30rem; border-radius: 10rem; }
 
-
-/* footer */
-.footer { padding: 80rem 0 40rem; text-align: center; }
-.share-btn { background: #fde500; display: inline-block; font-size: var(--font-size-03); padding: 12rem 30rem; border-radius: 10rem; }
-.copyright { padding-top: 80rem; }
+/* main-letter */
+.main-letter { position: relative; padding: 0; }
+.main-letter .wrap { position: relative; height: 100vh; }
+.main-letter__img { width: 100%; background: url(../img/wedding-photo-20.JPG)no-repeat center; background-size: cover; position: absolute; top: 0; left: 0; height: 100vh; }
+.main-letter__desc { position: absolute; }
+.main-letter__desc p { color: var(--color-white); }
+.main-letter__desc--bride { top: 80rem; left: 35rem; rotate: -9deg; font-family: 'Yoonwoo'; font-size: 20rem;  }
+.main-letter__desc--groom { bottom: 162rem; right: 34rem; rotate: 5deg; font-family: 'Future_tree'; font-size: 18rem; }
+.copyright { position: absolute; bottom: 30rem; left: 50%; translate: -50% 0; color: var(--color-white); }

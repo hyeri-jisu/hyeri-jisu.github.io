@@ -22,6 +22,7 @@ gallery();
 calendar();
 clipboard();
 bgm();
+pin_motion();
 
 
 
@@ -34,13 +35,15 @@ function motion(){
     const motionUp = document.querySelectorAll('.motion-up');
 
     motionUp.forEach((item)=>{
+        let start = item.getAttribute('data-motion-start');
         let delay = item.getAttribute('data-motion-delay');
+        if( start == undefined ) { start = 'top 80%' };
         if( delay == undefined ) { delay = 0 };
 
         gsap.set(item, {y: 20, autoAlpha: 0});
         ScrollTrigger.create({
             trigger: item,
-            start: 'top 80%',
+            start: start,
             //once: true,
             //markers: 1,
             onEnter: function(){
@@ -57,7 +60,7 @@ function motion(){
     });
 
     // IMG SCALE
-    gsap.to(".main-visual__img", {
+    gsap.to(".main-visual__img img", {
         scale: 2, // 확대 비율 (최대 크기)
         scrollTrigger: {
             trigger: ".main-intro",
@@ -68,16 +71,16 @@ function motion(){
     });
 
     // LETTER SECTION
-    ScrollTrigger.create({
-        trigger: '.main-letter',
-        start: 'top 80%',
-        //markers: 1,
-        onEnter: function(){
-            gsap.to('.main-letter__img--groom .main-letter__img-desc', {autoAlpha: 1, duration: 1})
-            gsap.to('.main-letter__img--bride', {autoAlpha: 1, duration: 1, delay: 1})
-            gsap.to('.main-letter__img--bride .main-letter__img-desc', {autoAlpha: 1, duration: 1, delay: 2})
-        }
-    });
+    // ScrollTrigger.create({
+    //     trigger: '.main-letter',
+    //     start: 'top 80%',
+    //     //markers: 1,
+    //     onEnter: function(){
+    //         gsap.to('.main-letter__img--groom .main-letter__img-desc', {autoAlpha: 1, duration: 1})
+    //         gsap.to('.main-letter__img--bride', {autoAlpha: 1, duration: 1, delay: 1})
+    //         gsap.to('.main-letter__img--bride .main-letter__img-desc', {autoAlpha: 1, duration: 1, delay: 2})
+    //     }
+    // });
 
     
 }
@@ -168,6 +171,64 @@ function bgm(){
     });
       
 }
+
+
+
+function pin_motion(){
+
+    const imgItems = document.querySelectorAll('.main-intro__pin-img-item');
+    const txtItems = document.querySelectorAll('.main-intro__pin-txt-item');
+    const totalSteps = imgItems.length - 1;  // 전환 횟수
+
+    // pin 고정
+    ScrollTrigger.create({
+        trigger: '.main-intro__pin',
+        start: 'top top',
+        end: `+=${totalSteps * 100}%`, // 각 아이템 당 100% 스크롤
+        pin: true,
+        scrub: true,
+        anticipatePin: 1,
+        //markers: 1,
+    });
+
+    // 이미지 전환 타임라인
+    const imgTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.main-intro__pin',
+        start: 'top top',
+        end: `+=${totalSteps * 100}%`,
+        scrub: true,
+    }
+    });
+
+    imgItems.forEach((item, index) => {
+    if (index === 0) return; // 첫 번째는 기본 노출
+
+    imgTl
+        .to(imgItems[index - 1], { opacity: 0, duration: 1 }, index)
+        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    });
+
+    // 텍스트 전환 타임라인
+    const txtTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.main-intro__pin',
+        start: 'top top',
+        end: `+=${totalSteps * 100}%`,
+        scrub: true,
+    }
+    });
+
+    txtItems.forEach((item, index) => {
+    //if (index === 0) return;
+
+    txtTl
+        .to(txtItems[index - 1], { opacity: 0, duration: 1 }, index)
+        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    });
+
+}
+
 
 
 })();
