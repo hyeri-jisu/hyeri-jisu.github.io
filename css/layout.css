@@ -49,10 +49,6 @@ img { width: 100%; display: block; }
 .main-visual__title-txt p + p { margin-top: 8rem; }
 .main-visual__bgm { position: absolute; top: 20rem; right: 20rem; }
 .main-visual__bgm-toggle { color: #afafaf; font-size: 18rem; }
-/* .main-visual__title h1 { font-size: 52rem; white-space: nowrap; color: var(--color-primary); font-family: 'FranciscoDemo'; }
-.main-visual__title p { color: var(--color-secondry); }
-.main-visual__desc { position: absolute; bottom: 30rem; left: 50%; translate: -50% 0; color: var(--color-primary); white-space: nowrap; text-align: center; z-index: 1; }
-.main-visual__desc p { font-size: var(--font-size-02); margin-bottom: 6rem; } */
 
 /* main-intro */
 .main-intro { padding-bottom: 0rem; position: relative; }
@@ -60,11 +56,11 @@ img { width: 100%; display: block; }
 .main-intro__desc { text-align: center; font-size: 17rem; line-height: 2; font-family: var(--font-primary); margin-bottom: 100rem; }
 .main-intro__desc-first { margin-bottom: 60rem; }
 .main-intro__desc-item:not(:first-child) { margin-top: 60rem; }
-.main-intro__pin { display: flex; flex-direction: column; /*height: 100vh;*/ }
-.main-intro__pin-img { width: 100%; height: 65vh; position: relative; }
+.main-intro__pin { display: flex; flex-direction: column; }
+.main-intro__pin-img { width: 100%; aspect-ratio: 4 / 5; position: relative; }
 .main-intro__pin-img-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .main-intro__pin-img-item img { height: 100%; width: 100%; object-fit: cover; }
-.main-intro__pin-txt { width: 100%; height: 35vh; position: relative; }
+.main-intro__pin-txt { width: 100%; height: 200rem; position: relative; }
 .main-intro__pin-txt p { position: absolute; top: 50%; left: 50%; translate: -50% -50%; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 2; font-size: 17rem; }
 .main-intro__bg { position: relative; height: 580rem; background: url(../img/gallery-03.jpg)no-repeat center; background-size: cover; background-position-y: bottom; }
 .main-intro__name { opacity: 0; position: relative; display: flex; justify-content: center; gap: 100rem; font-size: var(--font-size-03); }
@@ -132,8 +128,8 @@ img { width: 100%; display: block; }
 
 /* main-letter */
 .main-letter { position: relative; padding: 0; }
-.main-letter .wrap { position: relative; height: 100vh; }
-.main-letter__img { width: 100%; background: url(../img/wedding-photo-20.JPG)no-repeat center; background-size: cover; position: absolute; top: 0; left: 0; height: 100vh; }
+.main-letter .wrap { position: relative; aspect-ratio: 2 / 3; }
+.main-letter__img { width: 100%; aspect-ratio: 2 / 3; background: url(../img/wedding-photo-20.JPG)no-repeat center; background-size: cover; position: absolute; top: 0; left: 0; }
 .main-letter__desc { position: absolute; }
 .main-letter__desc p { color: var(--color-white); }
 .main-letter__desc--bride { top: 80rem; left: 35rem; rotate: -9deg; font-family: 'Yoonwoo'; font-size: 20rem;  }
