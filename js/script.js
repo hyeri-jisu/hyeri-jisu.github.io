@@ -100,12 +100,11 @@ function share(){
 
 function gallery(){
 
-    lightGallery(document.querySelector('.main-gallery__inner'), {
-        animateThumb: false,
-        zoomFromOrigin: false,
-        allowMediaOverlap: true,
-        toggleThumb: true,
-        download: false
+    const lightbox = GLightbox({
+        selector: '.main-gallery__item',
+        touchNavigation: true,
+        loop: true,
+        zoomable: true,
     });
     
 }
