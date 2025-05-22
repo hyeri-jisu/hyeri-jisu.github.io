@@ -115,7 +115,7 @@ function clipboard(){
     document.querySelectorAll('.copy-btn').forEach(button => {
         button.addEventListener('click', function (e) {
             e.preventDefault();
-            const container = document.querySelector('.main-account__item-list li');
+            const container = document.querySelector('.main-account');
             const textToCopy = button.getAttribute('data-copy');
           
             navigator.clipboard.writeText(textToCopy)
@@ -132,7 +132,7 @@ function clipboard(){
 
             setTimeout(() => {
                 msg.classList.add('hide');
-                //setTimeout(() => msg.remove(), 500);
+                setTimeout(() => msg.remove(), 500);
             }, 1000);
         });
     });
