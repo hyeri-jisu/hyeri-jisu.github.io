@@ -21,7 +21,7 @@ share();
 gallery();
 clipboard();
 bgm();
-pin_motion();
+//pin_motion();
 
 
 
@@ -29,34 +29,6 @@ pin_motion();
  * FUNCTIONS
  * **************************************** */
 function motion(){
-
-    // TEXT UP
-    const motionUp = document.querySelectorAll('.motion-up');
-
-    motionUp.forEach((item)=>{
-        let start = item.getAttribute('data-motion-start');
-        let delay = item.getAttribute('data-motion-delay');
-        if( start == undefined ) { start = 'top 80%' };
-        if( delay == undefined ) { delay = 0 };
-
-        gsap.set(item, {y: 20, autoAlpha: 0});
-        ScrollTrigger.create({
-            trigger: item,
-            start: start,
-            //once: true,
-            //markers: 1,
-            onEnter: function(){
-                gsap.to(item, {
-                    y: 0, 
-                    autoAlpha: 1, 
-                    duration: 0.8,
-                    rotation: 0,
-                    ease: 'power1.out',
-                    delay: delay
-                });
-            }
-        });
-    });
 
     // IMG SCALE
     gsap.to(".main-visual__img img", {
@@ -69,18 +41,124 @@ function motion(){
         }
     });
 
-    // LETTER SECTION
-    // ScrollTrigger.create({
-    //     trigger: '.main-letter',
-    //     start: 'top 80%',
-    //     //markers: 1,
-    //     onEnter: function(){
-    //         gsap.to('.main-letter__img--groom .main-letter__img-desc', {autoAlpha: 1, duration: 1})
-    //         gsap.to('.main-letter__img--bride', {autoAlpha: 1, duration: 1, delay: 1})
-    //         gsap.to('.main-letter__img--bride .main-letter__img-desc', {autoAlpha: 1, duration: 1, delay: 2})
-    //     }
-    // });
+    // TEXT SPLIT
+    const motionSplitTriggers = [];
+    const motionSplit = document.querySelectorAll('.motion-split');
 
+    motionSplit.forEach((item) => {
+        gsap.set(item, { autoAlpha: 0 });
+
+        const trigger = ScrollTrigger.create({
+            trigger: item,
+            start: 'top 80%',
+            once: true,
+            //markers: 1,
+            onEnter: function(){
+                let split = SplitText.create(item, { type: "words", aria: "hidden" });
+                gsap.to(item, { autoAlpha: 1 });
+                gsap.from(split.words, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "sine.out",
+                    stagger: 0.1,
+                });
+            },
+        });
+
+        motionSplitTriggers.push(trigger);
+    });
+
+    function refreshMotionSplitTriggers() {
+        motionSplitTriggers.forEach(trigger => trigger.refresh());
+    }
+    
+
+    // TEXT UP
+    const motionUpTriggers = [];
+    const motionUp = document.querySelectorAll('.motion-up');
+
+    motionUp.forEach((item) => {
+        let start = item.getAttribute('data-motion-start') || 'top 80%';
+        let delay = item.getAttribute('data-motion-delay') || 0;
+
+        gsap.set(item, { y: 20, autoAlpha: 0 });
+
+        const trigger = ScrollTrigger.create({
+            trigger: item,
+            start: start,
+            once: true,
+            // markers: true,
+            onEnter: function () {
+                gsap.to(item, {
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 0.8,
+                    rotation: 0,
+                    ease: 'power1.out',
+                    delay: delay,
+                });
+            },
+        });
+
+        motionUpTriggers.push(trigger);
+    });
+
+    function refreshMotionUpTriggers() {
+        motionUpTriggers.forEach(trigger => trigger.refresh());
+    }
+
+    // PIN
+    const imgItems = document.querySelectorAll('.main-intro__pin-img-item');
+    const txtItems = document.querySelectorAll('.main-intro__pin-txt-item');
+    const totalSteps = imgItems.length - 1;
+
+    // pin
+    ScrollTrigger.create({
+        trigger: '.main-intro__pin',
+        start: 'top top',
+        end: `+=${totalSteps * 100}%`,
+        pin: true,
+        scrub: true,
+        anticipatePin: 1,
+        //markers: 1,
+        onEnter: () => {
+            setTimeout(() => {
+                refreshMotionUpTriggers();
+                refreshMotionSplitTriggers();
+            }, 200);
+        }
+    });
+
+    // pin img
+    const imgTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.main-intro__pin',
+            start: 'top top',
+            end: `+=${totalSteps * 100}%`,
+            scrub: true,
+        }
+    });
+
+    imgItems.forEach((item, index) => {
+        if (index === 0) return;
+        imgTl.to(imgItems[index - 1], { opacity: 0, duration: 1 }, index);
+        imgTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    });
+
+    // pin txt
+    const txtTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.main-intro__pin',
+            start: 'top top',
+            end: `+=${totalSteps * 100}%`,
+            scrub: true,
+        }
+    });
+
+    txtItems.forEach((item, index) => {
+        txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
+        txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    });
     
 }
 
@@ -175,6 +253,13 @@ function pin_motion(){
         scrub: true,
         anticipatePin: 1,
         //markers: 1,
+        onEnter: () => {
+            ScrollTrigger.refresh();
+            console.log('onEnter')
+        },
+        onLeave: () => {
+            console.log('onLeave')
+        }
     });
 
     // 이미지 전환 타임라인

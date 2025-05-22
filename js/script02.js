@@ -248,12 +248,12 @@ function split_text(){
         onEnter: function(){
             let split = SplitText.create(".split", { type: "words", aria: "hidden" });
     
-        gsap.from(split.words, {
-            opacity: 0,
-            duration: 2,
-            ease: "sine.out",
-            stagger: 0.15,
-        });
+            gsap.from(split.words, {
+                opacity: 0,
+                duration: 2,
+                ease: "sine.out",
+                stagger: 0.15,
+            });
         },
     });
 
