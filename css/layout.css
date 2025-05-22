@@ -79,9 +79,9 @@ img { width: 100%; display: block; }
 .main-parents__item-title { color: var(--color-white); text-align: center; margin-bottom: 16rem; font-size: 16rem; font-family: var(--font-primary); }
 .main-parents__item-title strong { font-size: 20rem; }
 .main-parents__item-img { position: relative; margin: 0 auto; width: 260rem; height: 260rem; background: url(../img/baby01.jpeg)no-repeat center; background-size: cover; overflow: hidden; border-radius: 50%; }
-.main-parents__item-letter { text-align: center; padding: 0 20rem; margin-top: -30rem; z-index: 1; position: relative; }
-.main-parents__item-letter p { background: var(--color-white); display: inline-block; font-size: var(--font-size-02); margin-bottom: 8rem; font-family: 'Future_tree'; padding: 2rem 10rem; }
-.main-parents__item--bride .main-parents__item-img { background-image: url(../img/baby02.jpg); }
+.main-parents__item-letter { text-align: center; padding: 0 30rem; margin-top: -30rem; z-index: 1; position: relative; }
+.main-parents__item-letter p { background: var(--color-white); display: inline-block; font-size: 22rem; margin-bottom: 8rem; font-family: 'Future_tree'; padding: 2rem 10rem; }
+.main-parents__item--bride .main-parents__item-img { background-image: url(../img/baby02.jpeg); background-size: 130%; }
 .flower-01 { position: absolute; top: 47rem; left: 5rem; width: 120rem; rotate: -21deg; }
 .flower-02 { position: absolute; top: -52rem; right: 60rem; width: 75rem; rotate: 97deg; }
 
@@ -95,7 +95,7 @@ img { width: 100%; display: block; }
 .main-calrender { padding: 100rem 0; }
 .main-calrender__inner { text-align: center; }
 .main-calrender__month { font-size: 32rem; color: var(--color-primary); font-weight: 700; }
-.main-calrender__img { padding: 40rem 40rem 0 }
+.main-calrender__img { max-width: 260rem; margin: 40rem auto 0; }
 .leaf { width: 140rem; margin: 40rem auto 0; rotate: 9deg; }
 
 /* main-location */
