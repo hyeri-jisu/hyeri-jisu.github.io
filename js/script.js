@@ -88,7 +88,7 @@ function motion(){
 
 function share(){
     Kakao.init('276a8b83db146933e461c882d45fd7ce'); 
-    document.querySelector('.share-btn').addEventListener('click',() => {
+    document.querySelector('.main-account__share-btn').addEventListener('click',() => {
         Kakao.Link.sendCustom({
             templateId: 120426,
         });
@@ -141,7 +141,7 @@ function clipboard(){
 
 
 function bgm(){
-    const bgm = document.getElementById('bgm');
+    const bgm = document.querySelector('.main-visual__bgm-audio');
     const toggleBtn = document.querySelector('.main-visual__bgm-toggle');
     let isPlaying = false;
 
