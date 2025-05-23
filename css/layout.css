@@ -111,7 +111,8 @@ img { width: 100%; display: block; }
 .main-location__desc li:not(:last-child) { margin-bottom: 40rem; }
 
 /* main-account */
-.main-account { padding: 100rem 0; }
+.main-account { padding: 0; }
+.main-account .wrap { padding: 100rem 0; }
 .main-account .section-title { margin-bottom: 100rem; }
 .main-account__item { margin-bottom: 60rem; margin-left: 30rem; margin-right: 30rem; }
 .main-account__item-title { font-size: var(--font-size-01); border-bottom: 1px solid var(--color-black); padding-bottom: 15rem; padding-left: 5rem; }
@@ -122,7 +123,7 @@ img { width: 100%; display: block; }
 .main-account__item-desc span { font-size: var(--font-size-02); font-weight: 600; }
 .main-account__share { text-align: center; }
 .main-account__share-btn { color: var(--color-primary); font-size: var(--font-size-01); }
-.main-account__deco { position: absolute; top: -32rem; left: 0; width: 100%; }
+.main-account__deco { position: absolute; top: 68rem; left: 0; width: 100%; }
 .main-account__share-deco { width: 140rem; margin: 0 auto; rotate: 9deg; }
 .copy-message { opacity: 1; font-size: var(--font-size-02); position: fixed; bottom: 10%; left: 50%; translate: -50% 0%; background: rgba(0, 0, 0, 0.5); color: var(--color-white); padding: 10rem 20rem; white-space: nowrap; }
 .copy-message.hide { opacity: 0; }
@@ -147,5 +148,5 @@ img { width: 100%; display: block; }
     .main-parents__item-letter { padding: 0 30rem; } 
 
     /* main-account */
-    .ring-line-02 { top: 0; }
+    .main-account__deco { top: 88rem; }
 }
