@@ -45,28 +45,43 @@ function motion(){
     const motionSplitTriggers = [];
     const motionSplit = document.querySelectorAll('.motion-split');
 
-    motionSplit.forEach((item) => {
-        gsap.set(item, { autoAlpha: 0 });
+    gsap.set(motionSplit, { autoAlpha: 0 });
 
-        const trigger = ScrollTrigger.create({
-            trigger: item,
-            start: 'top 80%',
-            once: true,
-            //markers: 1,
-            onEnter: function(){
-                let split = SplitText.create(item, { type: "words", aria: "hidden" });
-                gsap.to(item, { autoAlpha: 1 });
-                gsap.from(split.words, {
-                    opacity: 0,
-                    duration: 1,
-                    ease: "sine.out",
-                    stagger: 0.1,
-                });
-            },
-        });
+    const firstItem = motionSplit[0];
+    const secondItem = motionSplit[1];
 
-        motionSplitTriggers.push(trigger);
+    ScrollTrigger.create({
+        trigger: firstItem,
+        start: 'top bottom',
+        once: true,
+        onEnter: () => {
+            const firstSplit = SplitText.create(firstItem, { type: "words", aria: "hidden" });
+
+            gsap.to(firstItem, { autoAlpha: 1 });
+
+            gsap.from(firstSplit.words, {
+                opacity: 0,
+                duration: 1,
+                ease: "sine.out",
+                stagger: 0.1,
+                onComplete: () => {
+                    const secondSplit = SplitText.create(secondItem, { type: "words", aria: "hidden" });
+
+                    gsap.to(secondItem, { autoAlpha: 1 });
+
+                    gsap.from(secondSplit.words, {
+                        opacity: 0,
+                        duration: 1,
+                        ease: "sine.out",
+                        stagger: 0.1,
+                    });
+                }
+            });
+        }
     });
+
+    motionSplitTriggers.push(firstSplit);
+    motionSplitTriggers.push(secondSplit);
 
     function refreshMotionSplitTriggers() {
         motionSplitTriggers.forEach(trigger => trigger.refresh());
