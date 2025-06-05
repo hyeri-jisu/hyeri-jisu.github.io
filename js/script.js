@@ -21,7 +21,6 @@ share();
 gallery();
 clipboard();
 bgm();
-//pin_motion();
 
 
 
@@ -117,7 +116,7 @@ function motion(){
         start: 'top top',
         end: `+=${totalSteps * 100}%`,
         pin: true,
-        pinType: 'transform',
+        //pinType: 'transform',
         scrub: true,
         anticipatePin: 1,
         //markers: 1,
@@ -236,70 +235,6 @@ function bgm(){
         isPlaying = !isPlaying;
     });
       
-}
-
-
-
-function pin_motion(){
-
-    const imgItems = document.querySelectorAll('.main-intro__pin-img-item');
-    const txtItems = document.querySelectorAll('.main-intro__pin-txt-item');
-    const totalSteps = imgItems.length - 1;  // 전환 횟수
-
-    // pin 고정
-    ScrollTrigger.create({
-        trigger: '.main-intro__pin',
-        start: 'top top',
-        end: `+=${totalSteps * 100}%`, // 각 아이템 당 100% 스크롤
-        pin: true,
-        scrub: true,
-        anticipatePin: 1,
-        //markers: 1,
-        onEnter: () => {
-            ScrollTrigger.refresh();
-            console.log('onEnter')
-        },
-        onLeave: () => {
-            console.log('onLeave')
-        }
-    });
-
-    // 이미지 전환 타임라인
-    const imgTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.main-intro__pin',
-        start: 'top top',
-        end: `+=${totalSteps * 100}%`,
-        scrub: true,
-    }
-    });
-
-    imgItems.forEach((item, index) => {
-    if (index === 0) return; // 첫 번째는 기본 노출
-
-    imgTl
-        .to(imgItems[index - 1], { opacity: 0, duration: 1 }, index)
-        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-    });
-
-    // 텍스트 전환 타임라인
-    const txtTl = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.main-intro__pin',
-        start: 'top top',
-        end: `+=${totalSteps * 100}%`,
-        scrub: true,
-    }
-    });
-
-    txtItems.forEach((item, index) => {
-    //if (index === 0) return;
-
-    txtTl
-        .to(txtItems[index - 1], { opacity: 0, duration: 1 }, index)
-        .fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-    });
-
 }
 
 
