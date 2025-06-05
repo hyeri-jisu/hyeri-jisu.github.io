@@ -184,22 +184,19 @@ function motion(){
     });
 
     // pin txt
-    // const txtTl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: '.main-intro__pin',
-    //         start: 'top top',
-    //         end: `+=${totalSteps * 100}%`,
-    //         scrub: true,
-    //     }
-    // });
+    const txtTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.main-intro__pin',
+            start: 'top top',
+            end: `+=${totalSteps * 100}%`,
+            scrub: true,
+        }
+    });
 
     // txtItems.forEach((item, index) => {
-    //     if (index === 0) {
-    //         txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-    //     } else {
-    //         txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
-    //         txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-    //     }
+    //     if (index === 0) return;
+    //     txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
+    //     txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
     // });
     
 }
