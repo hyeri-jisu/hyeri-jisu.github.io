@@ -84,46 +84,44 @@ function motion(){
         }
     });
 
-    
-
     function refreshMotionSplitTriggers() {
         motionSplitTriggers.forEach(trigger => trigger.refresh());
     }
     
 
     // TEXT UP
-    // const motionUpTriggers = [];
-    // const motionUp = document.querySelectorAll('.motion-up');
+    const motionUpTriggers = [];
+    const motionUp = document.querySelectorAll('.motion-up');
 
-    // motionUp.forEach((item) => {
-    //     let start = item.getAttribute('data-motion-start') || 'top 80%';
-    //     let delay = item.getAttribute('data-motion-delay') || 0;
+    motionUp.forEach((item) => {
+        let start = item.getAttribute('data-motion-start') || 'top 80%';
+        let delay = item.getAttribute('data-motion-delay') || 0;
 
-    //     gsap.set(item, { y: 20, autoAlpha: 0 });
+        gsap.set(item, { y: 20, autoAlpha: 0 });
 
-    //     const trigger = ScrollTrigger.create({
-    //         trigger: item,
-    //         start: start,
-    //         once: true,
-    //         // markers: true,
-    //         onEnter: function () {
-    //             gsap.to(item, {
-    //                 y: 0,
-    //                 autoAlpha: 1,
-    //                 duration: 0.8,
-    //                 rotation: 0,
-    //                 ease: 'power1.out',
-    //                 delay: delay,
-    //             });
-    //         },
-    //     });
+        const trigger = ScrollTrigger.create({
+            trigger: item,
+            start: start,
+            once: true,
+            // markers: true,
+            onEnter: function () {
+                gsap.to(item, {
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 0.8,
+                    rotation: 0,
+                    ease: 'power1.out',
+                    delay: delay,
+                });
+            },
+        });
 
-    //     motionUpTriggers.push(trigger);
-    // });
+        motionUpTriggers.push(trigger);
+    });
 
-    // function refreshMotionUpTriggers() {
-    //     motionUpTriggers.forEach(trigger => trigger.refresh());
-    // }
+    function refreshMotionUpTriggers() {
+        motionUpTriggers.forEach(trigger => trigger.refresh());
+    }
 
     // PIN
     // const imgItems = document.querySelectorAll('.main-intro__pin-img-item');
