@@ -57,7 +57,7 @@ img { width: 100%; display: block; }
 .main-intro__desc { text-align: center; font-size: var(--font-size-02); line-height: 2; margin-bottom: 100rem; }
 .main-intro__desc-first { margin-bottom: 60rem; }
 .main-intro__desc-item:not(:first-child) { margin-top: 60rem; }
-.main-intro__pin { display: flex; flex-direction: column; min-height: 100vh; }
+.main-intro__pin { display: flex; flex-direction: column; min-height: calc(var(--vh, 1vh) * 100); }
 .main-intro__pin-img { width: 100%; max-width: 540rem; aspect-ratio: 4 / 5; position: relative; }
 .main-intro__pin-img-item { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .main-intro__pin-img-item img { height: 100%; width: 100%; object-fit: cover; }
