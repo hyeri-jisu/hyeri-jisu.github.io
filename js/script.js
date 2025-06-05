@@ -21,11 +21,31 @@ share();
 gallery();
 clipboard();
 bgm();
-setVh();
+full_visual_height();
 
 
-window.addEventListener('resize', setVh);
 
+/* **************************************** *
+ * ON RESIZE
+ * **************************************** */
+// INITIALIZE RESIZE
+function handleResize(){
+
+    // setTimeout to fix IOS animation on rotate issue
+    setTimeout(function(){
+
+        // only width resize check not height ( minimize address bar debugging )
+        if (window.innerWidth !== windowWidth) {
+            window.location.reload();
+
+            full_visual_height();
+        }
+
+    }, 100);
+
+}
+
+window.addEventListener('resize', handleResize);
 
 
 /* **************************************** *
@@ -243,9 +263,25 @@ function bgm(){
 
 
 
-function setVh() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+function full_visual_height(){
+
+    // Kakao browser scrolltrigger pin issue fix + Naver browser issue
+    //if( (JT.browser('kakao') && document.body.classList.contains('page-template-manufacturing')) || (JT.browser('naver') && document.body.classList.contains('page-template-manufacturing'))){
+        document.documentElement.style.setProperty('--fit-height', `${ window.innerHeight }px`);
+        document.documentElement.style.setProperty('--full-height', `${ screen.height }px`);
+    //}
+
+    // height size
+    document.querySelectorAll('.main-intro__pin').forEach((visual)=> {    
+
+        if(window.screen.height === window.innerHeight){
+            winHeight = window.screen.height;
+        }else{
+            winHeight = window.innerHeight;
+        }
+        visual.style.height = winHeight + 'px';
+    });
+
 }
 
 
