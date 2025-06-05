@@ -42,35 +42,35 @@ function motion(){
     });
 
     // TEXT SPLIT
-    // const motionSplitTriggers = [];
-    // const motionSplit = document.querySelectorAll('.motion-split');
+    const motionSplitTriggers = [];
+    const motionSplit = document.querySelectorAll('.motion-split');
 
-    // motionSplit.forEach((item) => {
-    //     gsap.set(item, { autoAlpha: 0 });
+    motionSplit.forEach((item) => {
+        gsap.set(item, { autoAlpha: 0 });
 
-    //     const trigger = ScrollTrigger.create({
-    //         trigger: item,
-    //         start: 'top 80%',
-    //         once: true,
-    //         //markers: 1,
-    //         onEnter: function(){
-    //             let split = SplitText.create(item, { type: "words", aria: "hidden" });
-    //             gsap.to(item, { autoAlpha: 1 });
-    //             gsap.from(split.words, {
-    //                 opacity: 0,
-    //                 duration: 1,
-    //                 ease: "sine.out",
-    //                 stagger: 0.1,
-    //             });
-    //         },
-    //     });
+        const trigger = ScrollTrigger.create({
+            trigger: item,
+            start: 'top 80%',
+            once: true,
+            //markers: 1,
+            onEnter: function(){
+                let split = SplitText.create(item, { type: "words", aria: "hidden" });
+                gsap.to(item, { autoAlpha: 1 });
+                gsap.from(split.words, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "sine.out",
+                    stagger: 0.1,
+                });
+            },
+        });
 
-    //     motionSplitTriggers.push(trigger);
-    // });
+        motionSplitTriggers.push(trigger);
+    });
 
-    // function refreshMotionSplitTriggers() {
-    //     motionSplitTriggers.forEach(trigger => trigger.refresh());
-    // }
+    function refreshMotionSplitTriggers() {
+        motionSplitTriggers.forEach(trigger => trigger.refresh());
+    }
     
 
     // TEXT UP
