@@ -45,44 +45,66 @@ function motion(){
     const motionSplitTriggers = [];
     const motionSplit = document.querySelectorAll('.motion-split');
 
-    gsap.set(motionSplit, { autoAlpha: 0 });
+    motionSplit.forEach((item) => {
+        gsap.set(item, { autoAlpha: 0 });
 
-    const firstItem = motionSplit[0];
-    const secondItem = motionSplit[1];
+        const trigger = ScrollTrigger.create({
+            trigger: item,
+            start: 'top bottom',
+            once: true,
+            onEnter: function(){
+                let split = SplitText.create(item, { type: "words", aria: "hidden" });
+                gsap.to(item, { autoAlpha: 1 });
+                gsap.from(split.words, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "sine.out",
+                    stagger: 0.1,
+                });
+            },
+        });
 
-    ScrollTrigger.create({
-        trigger: firstItem,
-        start: 'top bottom',
-        once: true,
-        onEnter: () => {
-            const firstSplit = SplitText.create(firstItem, { type: "words", aria: "hidden" });
-
-            gsap.to(firstItem, { autoAlpha: 1 });
-
-            gsap.from(firstSplit.words, {
-                opacity: 0,
-                duration: 1,
-                ease: "sine.out",
-                stagger: 0.1,
-                onComplete: () => {
-                    const secondSplit = SplitText.create(secondItem, { type: "words", aria: "hidden" });
-
-                    gsap.to(secondItem, { autoAlpha: 1 });
-
-                    gsap.from(secondSplit.words, {
-                        opacity: 0,
-                        duration: 1,
-                        ease: "sine.out",
-                        stagger: 0.1,
-                    });
-
-                    motionSplitTriggers.push(secondSplit);
-                }
-            });
-
-            motionSplitTriggers.push(firstSplit);
-        }
+        motionSplitTriggers.push(trigger);
     });
+
+    // gsap.set(motionSplit, { autoAlpha: 0 });
+
+    // const firstItem = motionSplit[0];
+    // const secondItem = motionSplit[1];
+
+    // ScrollTrigger.create({
+    //     trigger: firstItem,
+    //     start: 'top bottom',
+    //     once: true,
+    //     onEnter: () => {
+    //         const firstSplit = SplitText.create(firstItem, { type: "words", aria: "hidden" });
+
+    //         gsap.to(firstItem, { autoAlpha: 1 });
+
+    //         gsap.from(firstSplit.words, {
+    //             opacity: 0,
+    //             duration: 1,
+    //             ease: "sine.out",
+    //             stagger: 0.1,
+    //             onComplete: () => {
+    //                 const secondSplit = SplitText.create(secondItem, { type: "words", aria: "hidden" });
+
+    //                 gsap.to(secondItem, { autoAlpha: 1 });
+
+    //                 gsap.from(secondSplit.words, {
+    //                     opacity: 0,
+    //                     duration: 1,
+    //                     ease: "sine.out",
+    //                     stagger: 0.1,
+    //                 });
+
+    //                 motionSplitTriggers.push(secondSplit);
+    //             }
+    //         });
+
+    //         motionSplitTriggers.push(firstSplit);
+    //     }
+    // });
 
     function refreshMotionSplitTriggers() {
         motionSplitTriggers.forEach(trigger => trigger.refresh());
@@ -137,12 +159,12 @@ function motion(){
         scrub: true,
         anticipatePin: 1,
         //markers: 1,
-        // onEnter: () => {
-        //     setTimeout(() => {
-        //         refreshMotionUpTriggers();
-        //         refreshMotionSplitTriggers();
-        //     }, 200);
-        // }
+        onEnter: () => {
+            setTimeout(() => {
+                refreshMotionUpTriggers();
+                refreshMotionSplitTriggers();
+            }, 200);
+        }
     });
 
     // pin img
@@ -162,23 +184,23 @@ function motion(){
     });
 
     // pin txt
-    const txtTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.main-intro__pin',
-            start: 'top top',
-            end: `+=${totalSteps * 100}%`,
-            scrub: true,
-        }
-    });
+    // const txtTl = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: '.main-intro__pin',
+    //         start: 'top top',
+    //         end: `+=${totalSteps * 100}%`,
+    //         scrub: true,
+    //     }
+    // });
 
-    txtItems.forEach((item, index) => {
-        if (index === 0) {
-            txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-        } else {
-            txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
-            txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-        }
-    });
+    // txtItems.forEach((item, index) => {
+    //     if (index === 0) {
+    //         txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    //     } else {
+    //         txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
+    //         txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    //     }
+    // });
     
 }
 
