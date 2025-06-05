@@ -124,26 +124,26 @@ function motion(){
     }
 
     // PIN
-    // const imgItems = document.querySelectorAll('.main-intro__pin-img-item');
-    // const txtItems = document.querySelectorAll('.main-intro__pin-txt-item');
-    // const totalSteps = imgItems.length - 1;
+    const imgItems = document.querySelectorAll('.main-intro__pin-img-item');
+    const txtItems = document.querySelectorAll('.main-intro__pin-txt-item');
+    const totalSteps = imgItems.length - 1;
 
     // pin
-    // ScrollTrigger.create({
-    //     trigger: '.main-intro__pin',
-    //     start: 'top top',
-    //     end: `+=${totalSteps * 100}%`,
-    //     pin: true,
-    //     scrub: true,
-    //     anticipatePin: 1,
-    //     //markers: 1,
-    //     onEnter: () => {
-    //         setTimeout(() => {
-    //             refreshMotionUpTriggers();
-    //             refreshMotionSplitTriggers();
-    //         }, 200);
-    //     }
-    // });
+    ScrollTrigger.create({
+        trigger: '.main-intro__pin',
+        start: 'top top',
+        end: `+=${totalSteps * 100}%`,
+        pin: true,
+        scrub: true,
+        anticipatePin: 1,
+        //markers: 1,
+        // onEnter: () => {
+        //     setTimeout(() => {
+        //         refreshMotionUpTriggers();
+        //         refreshMotionSplitTriggers();
+        //     }, 200);
+        // }
+    });
 
     // pin img
     // const imgTl = gsap.timeline({
