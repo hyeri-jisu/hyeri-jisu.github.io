@@ -67,45 +67,6 @@ function motion(){
         motionSplitTriggers.push(trigger);
     });
 
-    // gsap.set(motionSplit, { autoAlpha: 0 });
-
-    // const firstItem = motionSplit[0];
-    // const secondItem = motionSplit[1];
-
-    // ScrollTrigger.create({
-    //     trigger: firstItem,
-    //     start: 'top bottom',
-    //     once: true,
-    //     onEnter: () => {
-    //         const firstSplit = SplitText.create(firstItem, { type: "words", aria: "hidden" });
-
-    //         gsap.to(firstItem, { autoAlpha: 1 });
-
-    //         gsap.from(firstSplit.words, {
-    //             opacity: 0,
-    //             duration: 1,
-    //             ease: "sine.out",
-    //             stagger: 0.1,
-    //             onComplete: () => {
-    //                 const secondSplit = SplitText.create(secondItem, { type: "words", aria: "hidden" });
-
-    //                 gsap.to(secondItem, { autoAlpha: 1 });
-
-    //                 gsap.from(secondSplit.words, {
-    //                     opacity: 0,
-    //                     duration: 1,
-    //                     ease: "sine.out",
-    //                     stagger: 0.1,
-    //                 });
-
-    //                 motionSplitTriggers.push(secondSplit);
-    //             }
-    //         });
-
-    //         motionSplitTriggers.push(firstSplit);
-    //     }
-    // });
-
     function refreshMotionSplitTriggers() {
         motionSplitTriggers.forEach(trigger => trigger.refresh());
     }
@@ -156,6 +117,7 @@ function motion(){
         start: 'top top',
         end: `+=${totalSteps * 100}%`,
         pin: true,
+        pinType: 'transform',
         scrub: true,
         anticipatePin: 1,
         //markers: 1,
@@ -190,7 +152,7 @@ function motion(){
             start: 'top top',
             end: `+=${totalSteps * 100}%`,
             scrub: true,
-            markers: 1,
+            //markers: 1,
         }
     });
 
