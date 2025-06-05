@@ -75,13 +75,16 @@ function motion(){
                         ease: "sine.out",
                         stagger: 0.1,
                     });
+
+                    motionSplitTriggers.push(secondSplit);
                 }
             });
+
+            motionSplitTriggers.push(firstSplit);
         }
     });
 
-    motionSplitTriggers.push(firstSplit);
-    motionSplitTriggers.push(secondSplit);
+    
 
     function refreshMotionSplitTriggers() {
         motionSplitTriggers.forEach(trigger => trigger.refresh());
