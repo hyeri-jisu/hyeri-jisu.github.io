@@ -190,14 +190,15 @@ function motion(){
             start: 'top top',
             end: `+=${totalSteps * 100}%`,
             scrub: true,
+            markers: 1,
         }
     });
 
-    // txtItems.forEach((item, index) => {
-    //     if (index === 0) return;
-    //     txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
-    //     txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-    // });
+    txtItems.forEach((item, index) => {
+        if (index === 0) return;
+        txtTl.to(txtItems[index - 1], { opacity: 0, duration: 1 }, index);
+        txtTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    });
     
 }
 
