@@ -146,20 +146,20 @@ function motion(){
     });
 
     // pin img
-    // const imgTl = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: '.main-intro__pin',
-    //         start: 'top top',
-    //         end: `+=${totalSteps * 100}%`,
-    //         scrub: true,
-    //     }
-    // });
+    const imgTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.main-intro__pin',
+            start: 'top top',
+            end: `+=${totalSteps * 100}%`,
+            scrub: true,
+        }
+    });
 
-    // imgItems.forEach((item, index) => {
-    //     if (index === 0) return;
-    //     imgTl.to(imgItems[index - 1], { opacity: 0, duration: 1 }, index);
-    //     imgTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
-    // });
+    imgItems.forEach((item, index) => {
+        if (index === 0) return;
+        imgTl.to(imgItems[index - 1], { opacity: 0, duration: 1 }, index);
+        imgTl.fromTo(item, { opacity: 0 }, { opacity: 1, duration: 1 }, index);
+    });
 
     // pin txt
     // const txtTl = gsap.timeline({
